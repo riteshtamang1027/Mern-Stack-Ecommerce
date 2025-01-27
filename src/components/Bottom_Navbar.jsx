@@ -3,8 +3,10 @@ import React from 'react'
 
 export default function Bottom_Navbar() {
   return (
-    <div className='flex justify-between items-center w-8/12 mx-auto'>
-      <div className='flex items-center gap-8'>
+
+
+    <div className='flex justify-between items-center w-10/12 mx-auto'>
+      <div className='flex items-center gap-12'>
        <button className=' flex  items-center border bg-green-600 text-white opacity-90 rounded-md px-4 py-2 gap-1 whitespace-nowrap font-medium'>
        <LayoutDashboard size={16} />
         All Departments</button>
@@ -20,5 +22,7 @@ export default function Bottom_Navbar() {
       <div>
       </div>
     </div>
+
+    
   )
 }
