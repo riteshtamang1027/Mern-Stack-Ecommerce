@@ -23,7 +23,7 @@ export default function Popular_Product_Section() {
           {Products.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-400 rounded-xl px-4 py-4 flex flex-col items-center justify-center"
+              className="border border-gray-400 rounded-xl px-4 py-4 flex flex-col items-center justify-center hover:shadow-2xl hover:border-green-400"
             >
               <img src={item.Image} alt="" />
               <p className="opacity-70 font-semibold text-xs mt-4">
