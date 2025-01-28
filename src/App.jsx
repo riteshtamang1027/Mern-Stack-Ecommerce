@@ -5,16 +5,18 @@ import Bottom_Navbar from "./components/Bottom_Navbar";
 import Hero_Section_Slider from "./components/Hero_Section_Slider";
 import Feature_Categories_Section from "./components/Feature_Categories_Section";
 import Banner_Section from "./components/Banner_Section";
+import Popular_Product_Section from "./components/Popular_Product_Section";
 export default function App() {
   return (
     <div className=" space-y-4">
-      <Top_Navbar />
+      {/* <Top_Navbar />
       <Middle_Navbar />
       <Bottom_Navbar/>
       <hr className="text-gray-200"/>
       <Hero_Section_Slider/>
       <Feature_Categories_Section />
-      <Banner_Section/>
+      <Banner_Section/> */}
+      <Popular_Product_Section/>
     </div>
   );
 }
