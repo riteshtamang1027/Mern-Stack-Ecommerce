@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import first_image from "../../public/images/category-baby-care.jpg";
 import first_image1 from "../../public/images/category-atta-rice-dal.jpg";
@@ -24,12 +24,18 @@ export default function Feature_Categories_Section() {
           <p>Featured Categories</p>
         </div>
         <Swiper
-          slidesPerView={6}
+          slidesPerView={5}
           spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          modules={[Autoplay, Pagination]}
           className="mySwiper h-[36vh] "
         >
           {Categories.map((item, index) => (

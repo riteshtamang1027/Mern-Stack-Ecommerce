@@ -1,22 +1,29 @@
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import SliiderImg1 from "../../public/sliderimage/slide-1.jpg";
 import SliiderImg2 from "../../public/sliderimage/slide-2.jpg";
-
+import "swiper/css/navigation";
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { ArrowRight } from "lucide-react";
 export default function Hero_Section_Slider() {
   return (
     <div>
       <Swiper
-        pagination={true}
-        modules={[Pagination]}
+        slidesPerView={1}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination]}
         className="mySwiper h-[80vh] w-10/12 mx-auto rounded-lg "
       >
         <SwiperSlide>
@@ -67,7 +74,6 @@ export default function Hero_Section_Slider() {
           </div>
         </SwiperSlide>
       </Swiper>
-     
     </div>
   );
 }
