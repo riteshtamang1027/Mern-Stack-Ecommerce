@@ -6,29 +6,30 @@ import third from "../../public/bannerimage/3.jpg";
 
 export default function Home_Morden() {
   return (
-    <div className=" mt-24 ">
-      <div className="flex items-center justify-between w-10/12 mx-auto bg-gray-100 rounded-xl mt-8 space-x-8 p-4 flex-wrap ">
+    <div className="w-10/12 mx-auto mt-12  md:mt-24 ">
+    
+      <div className="flex items-center justify-between  bg-gray-100 rounded-xl mt-8 space-x-8 p-4 flex-wrap ">
         <div className="flex items-center gap-8 ">
           <img src={logo} alt="" />
           <div className="space-y-2 ">
-            <p className="text-3xl font-semibold opacity-80">
+            <p className=" text-xl lg:text-3xl font-semibold opacity-80">
               Welcome to FreshCart
             </p>
-            <p className="text-sm font-semibold opacity-60">
+            <p className=" text-xs md:text-sm lg:text-lg font-semibold opacity-60">
               Download the app get free food &{" "}
               <span className="text-green-700">$30</span> off on your first
               order.
             </p>
           </div>
         </div>
-        <button className="bg-black text-white text-sm p-4 rounded-xl hover:bg-gray-800 duration-200">
+        <button className="bg-black text-white text-xs p-2 lg:text-sm lg:p-4 rounded-xl hover:bg-gray-800 duration-200">
           Download FreshCArt App
         </button>
       </div>
 
-      <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 mt-8">
+      <div className=" grid grid-cols-1  md:grid-cols-2 2xl:grid-cols-3 gap-8 mt-8">
         <div className=" relative  ">
-          <img className="rounded-xl" src={first} alt="" />
+          <img className="rounded-xl md:h-64 object-cover" src={first} alt="" />
           <div className=" absolute space-y-4 top-8 left-8">
             <p className="text-2xl font-bold opacity-80">
               10% cashback on <br />
@@ -45,7 +46,11 @@ export default function Home_Morden() {
         </div>
 
         <div className="relative ">
-          <img className="rounded-xl relative" src={second} alt="" />
+          <img
+            className="rounded-xl md:h-64 object-cover"
+            src={second}
+            alt=""
+          />
           <div className=" absolute space-y-4 top-8 left-8">
             <p className="text-2xl font-bold opacity-80">
               Say yes to <br />
@@ -63,7 +68,7 @@ export default function Home_Morden() {
         </div>
 
         <div className=" relative">
-          <img className="rounded-xl relative" src={third} alt="" />
+          <img className="rounded-xl md:h-64 object-cover" src={third} alt="" />
           <div className=" absolute space-y-4 top-8 left-8">
             <p className="text-2xl font-bold opacity-80">
               When in doubt, <br />
