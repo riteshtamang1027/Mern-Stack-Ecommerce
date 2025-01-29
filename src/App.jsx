@@ -13,14 +13,14 @@ export default function App() {
     <div className=" space-y-4">
       <Top_Navbar />
       <Middle_Navbar />
-      <Bottom_Navbar/>
-      <hr className="text-gray-200"/>
-      <Hero_Section_Slider/>
+      <Bottom_Navbar />
+      <hr className="text-gray-200" />
+      <Hero_Section_Slider />
       <Feature_Categories_Section />
-      <Banner_Section/> 
-      <Popular_Product_Section/>
-      <Uupper_Footer_Section/>
-      <Home_Morden/>
+      <Banner_Section />
+      <Popular_Product_Section />
+      <Home_Morden />
+      <Uupper_Footer_Section />
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function Hero_Section_Slider() {
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
-        centeredSlides={true}
+        // centeredSlides={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -28,7 +28,7 @@ export default function Hero_Section_Slider() {
       >
         <SwiperSlide>
           <img
-            className=" object-cover absolute h-[75vh]"
+            className=" object-cover absolute h-[100vh] md:h-[75vh]"
             src={SliiderImg1}
             alt="Slider_Img1"
           />
@@ -52,7 +52,7 @@ export default function Hero_Section_Slider() {
 
         <SwiperSlide>
           <img
-            className=" object-cover absolute h-[75vh] "
+            className=" object-cover absolute h-[100vh] md:h-[75vh] "
             src={SliiderImg2}
             alt="Slider_Img2"
           />
