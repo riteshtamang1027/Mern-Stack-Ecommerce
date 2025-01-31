@@ -5,16 +5,18 @@ import Banner_Section from "./components/banner_section";
 import Popular_Product_Section from "./components/popular_product_section";
 import Uupper_Footer_Section from "./components/upper_footer_section";
 import Home_Morden from "./components/home_morden";
+import Blog_Section from "./pages/blog-section";
 export default function App() {
   return (
     <div className=" space-y-4">
    
-      <Hero_Section_Slider />
+      {/* <Hero_Section_Slider />
       <Feature_Categories_Section />
       <Banner_Section />
       <Popular_Product_Section />
       <Home_Morden />
-      <Uupper_Footer_Section />
+      <Uupper_Footer_Section /> */}
+      <Blog_Section/>
     </div>
   );
 }

@@ -10,9 +10,9 @@ import seventh from "../../public/popularproducts/product7.jpg";
 import eighth from "../../public/popularproducts/product8.jpg";
 import nineth from "../../public/popularproducts/product9.jpg";
 import tenth from "../../public/popularproducts/product10.jpg";
-import eleven from "../../public/popularproducts/product11.jpg";
-import twelve from "../../public/popularproducts/product12.jpg";
-import thirteen from "../../public/popularproducts/product13.jpg";
+// import eleven from "../../public/popularproducts/product11.jpg";
+// import twelve from "../../public/popularproducts/product12.jpg";
+// import thirteen from "../../public/popularproducts/product13.jpg";
 
 export default function Single_Category() {
   return (
@@ -122,49 +122,49 @@ const Products = [
     Price: "$24.5",
     Previous_Price: "$24.5",
   },
-  {
-    Image: eleven,
-    Category: "Bakery & Biscuits",
-    Name: "NutriChoice Digestive",
-    Rating: 4.5,
-    Reviews: 4,
-    Price: "$24.5",
-    Previous_Price: "$24.5",
-  },
-  {
-    Image: twelve,
-    Category: "Snack & Munchies",
-    Name: "Slurrp Millet Chocolate",
-    Rating: 4.5,
-    Reviews: 4,
-    Price: "$24.5",
-    Previous_Price: "$24.5",
-  },
-  {
-    Image: thirteen,
-    Category: "Snack & Munchies",
-    Name: "Haldiram's Sev Bhujia",
-    Rating: 4.5,
-    Reviews: 4,
-    Price: "$24.5",
-    Previous_Price: "$24.5",
-  },
-  {
-    Image: eleven,
-    Category: "Bakery & Biscuits",
-    Name: "NutriChoice Digestive",
-    Rating: 4.5,
-    Reviews: 4,
-    Price: "$24.5",
-    Previous_Price: "$24.5",
-  },
-  {
-    Image: twelve,
-    Category: "Snack & Munchies",
-    Name: "Slurrp Millet Chocolate",
-    Rating: 4.5,
-    Reviews: 4,
-    Price: "$24.5",
-    Previous_Price: "$24.5",
-  },
+  // {
+  //   Image: eleven,
+  //   Category: "Bakery & Biscuits",
+  //   Name: "NutriChoice Digestive",
+  //   Rating: 4.5,
+  //   Reviews: 4,
+  //   Price: "$24.5",
+  //   Previous_Price: "$24.5",
+  // },
+  // {
+  //   Image: twelve,
+  //   Category: "Snack & Munchies",
+  //   Name: "Slurrp Millet Chocolate",
+  //   Rating: 4.5,
+  //   Reviews: 4,
+  //   Price: "$24.5",
+  //   Previous_Price: "$24.5",
+  // },
+  // {
+  //   Image: thirteen,
+  //   Category: "Snack & Munchies",
+  //   Name: "Haldiram's Sev Bhujia",
+  //   Rating: 4.5,
+  //   Reviews: 4,
+  //   Price: "$24.5",
+  //   Previous_Price: "$24.5",
+  // },
+  // {
+  //   Image: eleven,
+  //   Category: "Bakery & Biscuits",
+  //   Name: "NutriChoice Digestive",
+  //   Rating: 4.5,
+  //   Reviews: 4,
+  //   Price: "$24.5",
+  //   Previous_Price: "$24.5",
+  // },
+  // {
+  //   Image: twelve,
+  //   Category: "Snack & Munchies",
+  //   Name: "Slurrp Millet Chocolate",
+  //   Rating: 4.5,
+  //   Reviews: 4,
+  //   Price: "$24.5",
+  //   Previous_Price: "$24.5",
+  // },
 ];

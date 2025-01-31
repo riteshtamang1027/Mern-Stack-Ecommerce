@@ -14,6 +14,7 @@ import Top_Navbar from "./components/top_navbar.jsx";
 import Middle_Navbar from "./components/middle_navbar.jsx";
 import Bottom_Navbar from "./components/bottom_Navbar.jsx";
 import Footer from "./components/footer.jsx";
+import Blog_Section from "./pages/blog-section.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -34,6 +35,9 @@ createRoot(document.getElementById("root")).render(
         <Route path="/stores" element={<Stores />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/categories/:id" element={<Single_Category />} />
+        <Route path="/blog-section/:id" element={<Blog_Section />} />
+
+
       </Routes>
       <Footer/>
     </BrowserRouter>
