@@ -1,20 +1,14 @@
 import React from "react";
-import Top_Navbar from "./components/Top_Navbar";
-import Middle_Navbar from "./components/Middle_Navbar";
-import Bottom_Navbar from "./components/Bottom_Navbar";
-import Hero_Section_Slider from "./components/Hero_Section_Slider";
-import Feature_Categories_Section from "./components/Feature_Categories_Section";
-import Banner_Section from "./components/Banner_Section";
-import Popular_Product_Section from "./components/Popular_Product_Section";
-import Uupper_Footer_Section from "./components/Upper_Footer_Section";
-import Home_Morden from "./components/Home_Morden";
+import Hero_Section_Slider from "./components/hero_section_slider";
+import Feature_Categories_Section from "./components/feature_categories_section";
+import Banner_Section from "./components/banner_section";
+import Popular_Product_Section from "./components/popular_product_section";
+import Uupper_Footer_Section from "./components/upper_footer_section";
+import Home_Morden from "./components/home_morden";
 export default function App() {
   return (
     <div className=" space-y-4">
-      <Top_Navbar />
-      <Middle_Navbar />
-      <Bottom_Navbar />
-      <hr className="text-gray-200" />
+   
       <Hero_Section_Slider />
       <Feature_Categories_Section />
       <Banner_Section />

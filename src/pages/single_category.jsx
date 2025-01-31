@@ -1,4 +1,5 @@
 import React from "react";
+import Single_Product_Card from "../components/single_product_card";
 import first from "../../public/popularproducts/product1.jpg";
 import second from "../../public/popularproducts/product2.jpg";
 import third from "../../public/popularproducts/product3.jpg";
@@ -12,49 +13,17 @@ import tenth from "../../public/popularproducts/product10.jpg";
 import eleven from "../../public/popularproducts/product11.jpg";
 import twelve from "../../public/popularproducts/product12.jpg";
 import thirteen from "../../public/popularproducts/product13.jpg";
-// import Single_Product_Card from "./single_product_card";
-// import ReactStars from "react-stars";
-import Single_Product_Card from "./single_product_card";
 
-export default function Popular_Product_Section() {
+export default function Single_Category() {
   return (
     <div>
-      <div className=" w-10/12 mx-auto  space-y-8 mt-24 ">
-        <h1 className="text-2xl font-semibold opacity-70 ">Popular Products</h1>
+      <div className="w-10/12 mx-auto ">
+        <p className=" bg-gray-200 text-5xl font-bold px-8 py-20  text-center">
+          Snacks & Munchies
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5">
           {Products.map((item, index) => (
-            <Single_Product_Card item={item} key={index}/>
-            // <div
-            //   key={index}
-            //   className="border border-gray-400 rounded-xl px-4 py-4 flex flex-col items-center justify-center hover:shadow-2xl hover:border-green-400"
-            // >
-            //   <img src={item.Image} alt="" />
-            //   <p className="opacity-70 font-semibold text-xs mt-4">
-            //     {item.Category}
-            //   </p>
-            //   <p className="opacity-90 font-semibold"> {item.Name} </p>
-            //   <div className="flex items-center gap-2">
-            //     <ReactStars
-            //       count={5}
-            //       value={item.Rating}
-            //       size={20}
-            //       color2={"#ffd700"}
-            //     />
-            //     <p className="font-bold opacity-70 text-xs">{item.Reviews}</p>
-            //   </div>
-            //   <div className="flex items-center justify-between gap-2 w-full">
-            //     <p className="font-semibold opacity-90">
-            //       {item.Price}
-            //       <span className="opacity-70 text-sm">
-            //         {item.Previous_Price}
-            //       </span>
-            //     </p>
-            //     <button className="  bg-green-500 text-white font-semibold rounded-md px-4 py-1 text-xs">
-            //       +Add
-            //     </button>
-            //   </div>
-            // </div>
-            // <Single_Product_Card key={index}/>
+            <Single_Product_Card item={item} key={index} />
           ))}
         </div>
       </div>

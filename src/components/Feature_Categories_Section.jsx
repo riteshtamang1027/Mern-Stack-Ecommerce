@@ -45,7 +45,7 @@ export default function Feature_Categories_Section() {
             1024: {
               slidesPerView: 5,
             },
-            1200: {
+            1280: {
               slidesPerView: 6,
             },
           }}
