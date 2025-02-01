@@ -24,7 +24,7 @@ export default function Feature_Categories_Section() {
           <p>Featured Categories</p>
         </div>
         <Swiper
-          slidesPerView={1}
+          slidesPerView={2}
           spaceBetween={30}
           // centeredSlides={true}
           autoplay={{
@@ -50,13 +50,13 @@ export default function Feature_Categories_Section() {
             },
           }}
           modules={[Autoplay, Pagination]}
-          className="mySwiper h-[36vh] "
+          className="mySwiper max-sm:h-[28vh] sm:h-[36vh] "
         >
           {Categories.map((item, index) => (
             <SwiperSlide key={index}>
               <div className=" space-y-4 border border-gray-300 rounded-xl hover:border-green-400 flex flex-col items-center hover:shadow-2xl duration-300 justify-center py-4  ">
                 <img src={item.Image} alt="" />
-                <p className="font-semibold opacity-50">{item.Name}</p>
+                <p className="font-semibold opacity-50 whitespace-nowrap max-sm:text-sm">{item.Name}</p>
               </div>
             </SwiperSlide>
           ))}

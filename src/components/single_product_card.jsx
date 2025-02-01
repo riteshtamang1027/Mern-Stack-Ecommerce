@@ -10,7 +10,7 @@ export default function Single_Product_Card({item}) {
           alt=""
         />
         <p className=" font-semibold opacity-50 text-xs">{item.Category}</p>
-        <p className=" font-semibold text-sm">{item.Name}</p>
+        <p className=" font-semibold max-sm:text-xs text-sm whitespace-nowrap">{item.Name}</p>
         <div className=" flex items-center gap-2">
           <ReactStars
             count={5}
@@ -21,8 +21,8 @@ export default function Single_Product_Card({item}) {
           <p className=" font-semibold opacity-70 text-sm">{item.Reviews}</p>
         </div>
 
-        <div className=" flex items-center justify-between w-full">
-          <p className=" font-semibold">
+        <div className=" flex items-center justify-between w-full whitespace-nowrap">
+          <p className=" font-semibold max-sm:text-xs">
           {item.Price} <span className=" opacity-70"> {item.Previous_Price}</span>
           </p>
           <button className=" bg-green-500 text-white font-semibold rounded-md px-4 py-1 text-xs">Add</button>

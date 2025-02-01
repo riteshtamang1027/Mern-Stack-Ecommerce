@@ -36,7 +36,7 @@ export default function Footer1({text}) {
                   {text.sub_text9}
                 </p>
               </div>
-              <div className="space-y-2 flex  flex-col ">
+              {/* <div className="space-y-2 flex  flex-col ">
                 <p className="hover:text-green-700 cursor-pointer">
                   {text.sub_text10}
                 </p>
@@ -64,13 +64,9 @@ export default function Footer1({text}) {
                 <p className="hover:text-green-700 cursor-pointer">
                   {text.sub_text18}
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
-      
-        
-    
-    
   );
 }
 

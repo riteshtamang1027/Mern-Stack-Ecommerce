@@ -20,7 +20,7 @@ export default function Popular_Product_Section() {
     <div>
       <div className=" w-10/12 mx-auto  space-y-8 mt-24 ">
         <h1 className="text-2xl font-semibold opacity-70 ">Popular Products</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5">
           {Products.map((item, index) => (
             <Single_Product_Card item={item} key={index}/>
           ))}

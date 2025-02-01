@@ -30,14 +30,14 @@ export default function Home_Morden() {
       <div className=" grid grid-cols-1  md:grid-cols-2 2xl:grid-cols-3 gap-8 mt-8">
         <div className=" relative  ">
           <img className="rounded-xl md:h-64 object-cover" src={first} alt="" />
-          <div className=" absolute space-y-4 top-8 left-8">
-            <p className="text-2xl font-bold opacity-80">
+          <div className=" absolute space-y-4 max-sm:top-4 sm:top-8 left-8">
+            <p className="text-2xl max-sm:text-lg font-bold opacity-80">
               10% cashback on <br />
               personal care
             </p>
-            <p className=" text-xl opacity-50">
-              Max cashback: $12 <br />
-              Code: <span className="font-semibold">CARE12</span>
+            <p className="max-sm:text-base text-xl ">
+               <span className="opacity-50"> Max cashback: $12 <br />
+               Code:</span> <span className="font-bold">  CARE12</span>
             </p>
             <button className="bg-black text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-gray-800 duration-200">
               Shop Now
@@ -51,12 +51,12 @@ export default function Home_Morden() {
             src={second}
             alt=""
           />
-          <div className=" absolute space-y-4 top-8 left-8">
-            <p className="text-2xl font-bold opacity-80">
+          <div className=" absolute space-y-4 max-sm:top-4 sm:top-8 left-8">
+            <p className="text-2xl max-sm:text-lg font-bold opacity-80">
               Say yes to <br />
               season’s fresh
             </p>
-            <p className=" text-xl opacity-50">
+            <p className="max-sm:text-base text-xl opacity-50">
               Refresh your day
               <br />
               the fruity way
@@ -69,12 +69,12 @@ export default function Home_Morden() {
 
         <div className=" relative">
           <img className="rounded-xl md:h-64 object-cover" src={third} alt="" />
-          <div className=" absolute space-y-4 top-8 left-8">
-            <p className="text-2xl font-bold opacity-80">
+          <div className=" absolute space-y-4 max-sm:top-4 sm:top-8 left-8">
+            <p className="text-2xl max-sm:text-lg font-bold opacity-80">
               When in doubt, <br />
               eat ice cream
             </p>
-            <p className=" text-xl opacity-50">
+            <p className="max-sm:text-base text-xl opacity-50">
               Enjoy a scoop of <br />
               summer today
             </p>

@@ -19,6 +19,7 @@ export default function App() {
       <Popular_Product_Section />
       <Home_Morden />
       <Uupper_Footer_Section />
+{/* <Footer/> */}
             {/* <Footer1/> */}
 
     </div>
