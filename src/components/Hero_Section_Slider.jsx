@@ -10,7 +10,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { ArrowRight } from "lucide-react";
 export default function Hero_Section_Slider() {
   return (
-    <div>
+    <div className="mt-8">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}

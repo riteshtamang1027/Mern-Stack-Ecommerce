@@ -1,6 +1,4 @@
-import React from "react";
-import blog_image0 from "../../public/blogs_images/blog-img-1.jpg";
-
+import React from 'react'
 import blog_image1 from "../../public/blogs_images/blog-img-1.jpg";
 import blog_image2 from "../../public/blogs_images/blog-img-2.jpg";
 import blog_image3 from "../../public/blogs_images/blog-img-3.jpg";
@@ -10,82 +8,24 @@ import blog_image6 from "../../public/blogs_images/blog-img-6.jpg";
 import blog_image7 from "../../public/blogs_images/blog-img-7.jpg";
 import blog_image8 from "../../public/blogs_images/blog-img-8.jpg";
 import blog_image9 from "../../public/blogs_images/blog-img-9.jpg";
-import Blog_Category_Section from "./blog_category_section";
+import Blog_Category_Section from './blog_category_section';
 
-export default function Blog_Section() {
+export default function Blog_Category() {
   return (
-    <div className="w-10/12 mx-auto ">
-      <div className=" mt-2 font-semibold ">
-        <p className="flex gap-4">
-          <span className="text-green-700 hover:text-green-400 cursor-pointer">Home</span>
-          <span className=" opacity-40 ">/</span>
-          <span className="mr-4  opacity-40  "> Blog</span>
-        </p>
-      </div>
-      <div className="mt-18">
-        <p className="text-4xl font-bold opacity-80">FreshCart Blog</p>
-        <div className="mt-12 flex max-sm:hidden   items-center  justify-between  gap-14  ">
-          <div className="w-[176vw]  relative h-[60vh] cursor-pointer rounded-xl overflow-hidden">
-            <img
-              className=" w-[58vw]  object-cover absolute h-[60vh] hover:scale-110 duration-700"
-              src={blog_image0}
-              alt="Image"
-            />
-          </div>
-          <div className="space-y-4">
-            <p className="text-3xl  font-semibold opacity-80 hover:text-green-800 cursor-pointer">
-              Harissa Chickpeas with Whipped Feta
-            </p>
-            <p className="opacity-60 text-sm font-semibold">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac
-              erat ut neque bibendum egestas sed quis justo. Integer non rhoncus
-              diam. Nullam eget dapibus lectus, vitae condimentum sem.
-            </p>
-            <div className="text-xs font-semibold flex justify-between">
-              <p className="opacity-50">1 February 2025</p>
-              <p>
-                {" "}
-                <span className=" opacity-50">Read time:</span> 12min
-              </p>
-            </div>
-          </div>
-        </div>
-
-        
+    <div className='w-10/12 mx-auto'>
         <div className="grid max-sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-12  max-md:space-y-8 space-y-2 md:space-x-8 gap-x-12 gap-y-4 ">
-          {Items.map((item, index) => (
-            <Blog_Category_Section key={index} item={item}/>
 
-            // <div key={index} className="flex flex-col max-md:w-full xl:w-[27vw] xl:h-[58vh]   relative  ">
-            //   <div className="max-md:w-full md:w-full rounded-xl object-cover overflow-hidden cursor-pointer  ">
-            //     <img
-            //       className="  hover:scale-110 duration-700"
-            //       src={item.Image}
-            //       alt="Image"
-            //     />
-            //   </div>
-            //   <div className="space-y-4 mt-4 ">
-            //     <p className="text-green-700 ">{item.Category}</p>
-            //     <p className="text-lg font-semibold  opacity-80 hover:text-green-800 cursor-pointer">
-            //       {item.Name}
-            //     </p>
-            //     <p className="opacity-60 ">{item.About_item}</p>
-            //     <div className="text-xs font-semibold flex justify-between item-center">
-            //       <p className="opacity-50">{item.Date}</p>
-            //       <p>
-            //         {" "}
-            //         <span className=" opacity-50">Read time:</span> {item.Time} <span className=" opacity-50">min</span> 
-            //       </p>
-            //     </div>
-            //   </div>
-            // </div>
-
-          ))}
-        </div>
-      </div>
+        {
+            Items.map((item,index)=>(
+                <Blog_Category_Section item={item} key={index} />
+            ))
+        }
     </div>
-  );
+    </div>
+  )
 }
+
+
 const Items = [
   {
     Image:blog_image1,

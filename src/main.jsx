@@ -36,8 +36,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="/shop" element={<Shop />} />
         <Route path="/categories/:id" element={<Single_Category />} />
         <Route path="/blog-section/:id" element={<Blog_Section />} />
-
-
       </Routes>
       <Footer/>
     </BrowserRouter>
