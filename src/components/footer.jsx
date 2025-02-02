@@ -112,7 +112,7 @@ const Texts = [
     // sub_text18: " Pet care",
   },
   {
-    Main_text:<p className="text-gray-100 ">Find Me</p>,
+    Main_text:<p className="mb-8 "></p>,
     sub_text1: "  Dairy, bread & eggs",
     sub_text2: "  Cold drinks & juices",
     sub_text3: "  Tea, coffee & drinks",

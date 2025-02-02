@@ -4,7 +4,8 @@ import ReactStars from "react-stars";
 
 export default function Single_Product_Card({item}) {
   return (
-    <NavLink to={`/shop/${item.nam}`} >
+   
+   <NavLink to={`/shop/${item.nam}`} >
      <div className=" border border-gray-300 rounded-md flex  flex-col items-center justify-center  p-4 space-y-1.5  ">
         <img
           src={item.Image}

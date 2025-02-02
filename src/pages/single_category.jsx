@@ -21,7 +21,7 @@ export default function Single_Category() {
         <p className=" bg-gray-200 text-5xl font-bold px-8 py-20  text-center">
           Snacks & Munchies
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5">
           {Products.map((item, index) => (
             <Single_Product_Card item={item} key={index} />
           ))}
