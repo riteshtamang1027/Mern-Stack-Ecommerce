@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import ReactStars from "react-stars";
 
 export default function Single_Product_Card({item}) {
   return (
-    <div>
+    <NavLink to={`/shop/${item.nam}`} >
      <div className=" border border-gray-300 rounded-md flex  flex-col items-center justify-center  p-4 space-y-1.5  ">
         <img
           src={item.Image}
@@ -28,6 +29,6 @@ export default function Single_Product_Card({item}) {
           <button className=" bg-green-500 text-white font-semibold rounded-md px-4 py-1 text-xs">Add</button>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 }
