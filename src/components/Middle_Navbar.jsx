@@ -3,6 +3,7 @@ import { Heart, MapPin } from "lucide-react";
 import { User } from "lucide-react";
 import { ShoppingBag } from "lucide-react";
 import mylogo from "../../public/logo/logo.svg";
+import { NavLink } from "react-router";
 
 export default function Middle_Navbar() {
   return (
@@ -17,19 +18,20 @@ export default function Middle_Navbar() {
               placeholder="Search for products"
             />
             <div className="hidden lg:block">
-            <button className="flex items-center gap-0.5 border-2  border-gray-300  rounded-md px-4 py-2 hover:bg-gray-300 hover:text-white duration-500   cursor-pointer ">
-              <MapPin size={20} />
-              Location
-            </button>
+              <button className="flex items-center gap-0.5 border-2  border-gray-300  rounded-md px-4 py-2 hover:bg-gray-300 hover:text-white duration-500   cursor-pointer ">
+                <MapPin size={20} />
+                Location
+              </button>
             </div>
-           
           </div>
         </div>
       </div>
 
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 cursor-pointer">
         <Heart size={28} strokeWidth={1} />
-        <User size={28} strokeWidth={1} />
+        <NavLink to={"/sign_in"}>
+          <User size={28} strokeWidth={1} />
+        </NavLink>
         <ShoppingBag size={28} strokeWidth={1} />
       </div>
     </div>
