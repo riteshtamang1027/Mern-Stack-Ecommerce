@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img1 from "../../public/product/1.jpg";
 import img2 from "../../public/product/2.jpg";
 import img3 from "../../public/product/3.jpg";
@@ -7,14 +7,17 @@ import img4 from "../../public/product/4.jpg";
 import ReactStars from "react-stars";
 import { ArrowRightLeft, Heart, ShoppingBag } from "lucide-react";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
-import { FreeMode, Thumbs } from 'swiper/modules';
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import InnerImageZoom from "react-inner-image-zoom";
+
+import { FreeMode, Thumbs } from "swiper/modules";
 
 import first from "../../public/popularproducts/product1.jpg";
 import second from "../../public/popularproducts/product2.jpg";
@@ -22,126 +25,161 @@ import third from "../../public/popularproducts/product3.jpg";
 import forth from "../../public/popularproducts/product4.jpg";
 import fifth from "../../public/popularproducts/product5.jpg";
 import Single_Product_Card from "../components/single_product_card";
+import Child_Component from "../components/chilf-component";
 export default function Product_Description() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  // State in react with hooks.
+  // first is veriable and second one is setterfunction which have access to change the vlaue of first variable.
+  const [count, setCount] = useState(1);
+  // const num = document.querySelector("#number");
+  // count.innerText=num ;
+
+  // console.log(count)
+
+  // props (Propreties in react)
+  // props can only be passed from parent to child.
+  // Props cannot be change by the child component
+  const name = "Ritesh Tamang";
+
+  // UsEffect hook
+  // Its runs after the page reloads an depends upon dependency array
+  useEffect(() => {
+    console.log("UseEffect is running");
+  }, [count]);
+  // [] dependency array
+
   return (
     <div className="w-10/12 mx-auto  ">
-       <div className=" mt-2 font-semibold whitespace-nowrap ">
+      <div className=" mt-2 font-semibold whitespace-nowrap ">
         <p className="flex gap-4">
-          <span className="text-lime-600 hover:text-lime-400 cursor-pointer">Home</span>
+          <span className="text-lime-600 hover:text-lime-400 cursor-pointer">
+            Home
+          </span>
           <span className=" opacity-40 ">/</span>
-          <span className="text-lime-600 hover:text-lime-400 cursor-pointer">Shop</span>
+          <span className="text-lime-600 hover:text-lime-400 cursor-pointer">
+            Shop
+          </span>
           <span className=" opacity-40 ">/</span>
           <span className="mr-4  opacity-40  "> Haldirams Sev Bhujia</span>
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-24 mt-16">
-      <div>
-      <Swiper
-        
-        loop={true}
-        spaceBetween={10}
-        thumbs={{ swiper: thumbsSwiper,
-          delay:7500,
-         }}
-        modules={[FreeMode, Thumbs]}
-        className="mySwiper2 rounded-xl "
-      >
-        <SwiperSlide>
-        <img className="lg:h-[70vh]  xl:h-full" src={img1} alt="Image" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <img className="lg:h-[70vh]  xl:h-full" src={img2} alt="Image" />
-        </SwiperSlide> 
-          <SwiperSlide>
-        <img className="lg:h-[70vh]  xl:h-full" src={img3} alt="Image" />
-        </SwiperSlide>  
-         <SwiperSlide>
-        <img className="lg:h-[70vh]  xl:h-full" src={img4} alt="Image" />
-        </SwiperSlide>
-      </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        
-        modules={[FreeMode,  Thumbs]}
-        className="mySwiper rounded-xl mt-8 cursor-pointer"
-      >
-        <SwiperSlide >
-        <img className=" rounded-xl " src={img1} alt="Image" /> 
-        </SwiperSlide>
-        <SwiperSlide >
-        <img className="rounded-xl" src={img2} alt="Image" />
-        </SwiperSlide>
-        <SwiperSlide >
-        <img className="rounded-xl" src={img3} alt="Image" />
-        </SwiperSlide>
-        <SwiperSlide >
-        <img className="rounded-xl" src={img4} alt="Image" />
-        </SwiperSlide>
-      </Swiper>
-
-
-      </div>
-
-      <div className="space-y-4">
-        <p className="text-xs text-green-600 font-semibold cursor-pointer hover:text-green-700">
-          Snack & Munchies
-        </p>
-        <p className="text-3xl font-semibold whitespace-nowrap">Haldiram's Sev Bhujia</p>
-        <div className="flex items-center">
-          <ReactStars count={5} size={20} value={4} color2={"#ffd700"} />
-          <p className="text-green-600 font-semibold text-xs">(4 review)</p>
+        <div>
+          <Swiper
+            loop={true}
+            spaceBetween={10}
+            thumbs={{ swiper: thumbsSwiper, delay: 7500 }}
+            modules={[FreeMode, Thumbs]}
+            className="mySwiper2 rounded-xl "
+          >
+            <SwiperSlide>
+              <InnerImageZoom src={img1} />
+              {/* <img className="lg:h-[70vh]  xl:h-full" src={img1} alt="Image" /> */}
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="lg:h-[70vh]  xl:h-full" src={img2} alt="Image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="lg:h-[70vh]  xl:h-full" src={img3} alt="Image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="lg:h-[70vh]  xl:h-full" src={img4} alt="Image" />
+            </SwiperSlide>
+          </Swiper>
+          <Swiper
+            onSwiper={setThumbsSwiper}
+            spaceBetween={10}
+            slidesPerView={4}
+            modules={[FreeMode, Thumbs]}
+            className="mySwiper rounded-xl mt-8 cursor-pointer"
+          >
+            <SwiperSlide className="border border-green-400 rounded-xl">
+              <img className=" rounded-xl " src={img1} alt="Image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="rounded-xl" src={img2} alt="Image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="rounded-xl" src={img3} alt="Image" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="rounded-xl" src={img4} alt="Image" />
+            </SwiperSlide>
+          </Swiper>
         </div>
-        <p className="space-x-1">
-          <span className="font-bold text-lg">$21.6</span>
-          <span className="font-semibold text-lg opacity-40">$24</span>
-          <span className="text-red-600 text-sm">10% Off</span>
-        </p>
 
-        <hr className="text-gray-300" />
-        <div className=" space-y-4">
-          <div className="flex mt-2 gap-1 ">
-            <div className="border border-gray-400 w-max px-4 py-2 hover:bg-gray-500 hover:text-white text-gray-500 rounded-md">
-              250g
-            </div>
-            <div className="border border-gray-400 w-max px-4 py-2 hover:bg-gray-500 hover:text-white text-gray-500 rounded-md">
-              500g
-            </div>
-            <div className="border border-gray-400 w-max px-4 py-2 hover:bg-gray-500 hover:text-white text-gray-500 rounded-md">
-              1kg
-            </div>
-          </div>
-
+        <div className="space-y-4">
+          <p className="text-xs text-green-600 font-semibold cursor-pointer hover:text-green-700">
+            Snack & Munchies
+          </p>
+          <p className="text-3xl font-semibold whitespace-nowrap">
+            Haldiram's Sev Bhujia
+          </p>
           <div className="flex items-center">
-            <span className="border rounded-l-md border-gray-300 text-center font-semibold  px-2 py-1 hover:bg-gray-200">
-              -
-            </span>
-            <input
+            <ReactStars count={5} size={20} value={4} color2={"#ffd700"} />
+            <p className="text-green-600 font-semibold text-xs">(4 review)</p>
+          </div>
+          <p className="space-x-1">
+            <span className="font-bold text-lg">$21.6</span>
+            <span className="font-semibold text-lg opacity-40">$24</span>
+            <span className="text-red-600 text-sm">10% Off</span>
+          </p>
+
+          <hr className="text-gray-300" />
+          <div className=" space-y-4">
+            <div className="flex mt-2 gap-1 ">
+              <div className="border border-gray-400 w-max px-4 py-2 hover:bg-gray-500 hover:text-white text-gray-500 rounded-md">
+                250g
+              </div>
+              <div className="border border-gray-400 w-max px-4 py-2 hover:bg-gray-500 hover:text-white text-gray-500 rounded-md">
+                500g
+              </div>
+              <div className="border border-gray-400 w-max px-4 py-2 hover:bg-gray-500 hover:text-white text-gray-500 rounded-md">
+                1kg
+              </div>
+            </div>
+
+            <div className="flex items-center">
+              <span
+                onClick={(e) => setCount(count - 1)}
+                className="border rounded-l-md cursor-pointer border-gray-300 text-center font-semibold  px-2 py-1 hover:bg-gray-200"
+              >
+                -
+              </span>
+              {/* <input
               className="border border-gray-300 px-6 py-1 outline-none w-[4vw] focus:ring-2 focus:ring-green-200 focus:border-green-400 "
-              type="text"
-            />
-            <span className="border rounded-r-md border-gray-300 text-center font-semibold  px-2 py-1 hover:bg-gray-200">
-              +
-            </span>
+              type="text" defaultValue={count} value={count}
+            /> */}{" "}
+              <div className="border border-gray-300 px-6 py-1 outline-none w-[4vw] focus:ring-2 focus:ring-green-200 focus:border-green-400 text-center ">
+                <p>{count}</p>
+              </div>
+              <span
+                onClick={(e) => setCount(count + 1)}
+                className="border cursor-pointer rounded-r-md border-gray-300 text-center font-semibold  px-2 py-1 hover:bg-gray-200"
+              >
+                +
+              </span>
+            </div>
+            <div className="flex gap-2 items-center cursor-pointer">
+              <div className="bg-green-600 w-max flex items-center gap-2 whitespace-nowrap text-white font-semibold px-8 py-2 rounded-lg hover:bg-green-700 duration-300">
+                <ShoppingBag />
+
+                <p>Add to cart</p>
+              </div>
+              <div className="bg-gray-200 rounded-sm w-max px-4 py-2 ">
+                <ArrowRightLeft size={20} strokeWidth={1} />
+              </div>
+              <div className="bg-gray-200 rounded-sm w-max px-4 py-2 ">
+                <Heart size={20} strokeWidth={1} />
+              </div>
+            </div>
           </div>
-          <div className="flex gap-2 items-center">
-            <div className="bg-green-600 w-max flex items-center gap-2 whitespace-nowrap text-white font-semibold px-8 py-2 rounded-lg hover:bg-green-700 duration-300">
-              <ShoppingBag />
-              <p>Add to cart</p>
-            </div>
-            <div className="bg-gray-200 rounded-sm w-max px-4 py-2 ">
-              <ArrowRightLeft size={20} strokeWidth={1} />
-            </div>
-            <div className="bg-gray-200 rounded-sm w-max px-4 py-2 ">
-              <Heart size={20} strokeWidth={1} />
-            </div>
-          </div>
-        </div>
-        <hr className="text-gray-300" />
-        <div className="flex items-center gap-x-36 ">
+          <hr className="text-gray-300" />
+
+          <Child_Component Name={name} />
+
+          {/* <div className="flex items-center gap-x-36 ">
           <div className="text-sm font-semibold opacity-50 space-y-6  ">
             <p>Product Code:</p>
             <p>Availability:</p>
@@ -160,26 +198,23 @@ export default function Product_Description() {
             </div>{" "}
           </div>
         </div>
-        <select className="w-max px-4 py-2 rounded-xl border border-gray-200 opacity-60 text-center  hover:bg-gray-300 focus:bg-gray-300"  >
-          <option className=" " >Share</option>
-      </select>
-      </div>
-     
+          <button  className="w-max px-4 py-2 rounded-md border border-gray-500 opacity-60 text-center hover:text-white  hover:bg-gray-400 focus:bg-gray-400 focus:text-white " >
+          Share
+          </button> */}
+          {/* </select> */}
+        </div>
       </div>
       <div className="mt-24">
         <p className=" text-3xl font-bold opacity-80">Related Items</p>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5 mt-8">
-                {Products.map((item, index) => (
-                  <Single_Product_Card item={item} key={index} />
-                ))}
-              </div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 space-y-1.5 mt-8">
+          {Products.map((item, index) => (
+            <Single_Product_Card item={item} key={index} />
+          ))}
+        </div>
       </div>
-       
     </div>
   );
 }
-
-
 
 const Products = [
   {
@@ -227,5 +262,4 @@ const Products = [
     Price: "$24.5",
     Previous_Price: "$24.5",
   },
-  
 ];
