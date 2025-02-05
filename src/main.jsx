@@ -40,7 +40,7 @@ export function Root(){
       <Routes>
 
         <Route path="/" element={<App />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard></Dashboard>} />
         <Route path="/pages" element={<Blog />} />
         <Route path="/mega_menu" element={<Mega_Menu/>} />
         <Route path="/stores" element={<Stores />} />
@@ -62,4 +62,4 @@ export function Root(){
   </StrictMode>
   )
 }
-createRoot(document.getElementById("root")).render( <BrowserRouter>   <Root />  </BrowserRouter>  );
+createRoot(document.getElementById("root")).render( <BrowserRouter>   <Root/>  </BrowserRouter>  );
