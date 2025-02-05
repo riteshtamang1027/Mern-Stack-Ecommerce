@@ -19,6 +19,7 @@ import Reset_Password from "./pages/Reset_Password.jsx";
 import Sign_In from "./pages/Sign_In.jsx";
 import Single_Category from "./pages/Single_Category.jsx";
 import Blog_Section from "./pages/Blog_Section.jsx";
+import Footer from "./components/Footer.jsx";
 
 
 export function Root(){
@@ -55,9 +56,9 @@ export function Root(){
 
       </Routes>
 
-      {/* { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
+      { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
         <Footer/>
-      } */}
+      }
   </StrictMode>
   )
 }
