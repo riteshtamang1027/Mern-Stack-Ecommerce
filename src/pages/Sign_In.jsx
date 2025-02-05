@@ -2,7 +2,7 @@ import React from "react";
 import SignIn from "../../public/sign_in/signin.svg";
 import { EyeOff } from "lucide-react";
 import { NavLink } from "react-router";
-import Register_Navbar from "../components/register-navbar";
+import Register_Navbar from "../components/Register_Navbar";
 
 export default function Sign_In() {
   return (

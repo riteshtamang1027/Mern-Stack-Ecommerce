@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 import img from "../../public/sign_in/fp-g.svg";
-import Register_Navbar from "../components/register-navbar";
+import Register_Navbar from "../components/Register_Navbar";
 
 export default function Reset_Password() {
   return (

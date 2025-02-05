@@ -13,7 +13,7 @@ import eleven from "../../public/popularproducts/product11.jpg";
 import twelve from "../../public/popularproducts/product12.jpg";
 import thirteen from "../../public/popularproducts/product13.jpg";
 
-import Single_Product_Card from "./single_product_card";
+import Single_Product_Card from "./Single_Product_Card";
 
 export default function Popular_Product_Section() {
   return (

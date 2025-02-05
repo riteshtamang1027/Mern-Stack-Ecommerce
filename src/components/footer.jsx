@@ -3,7 +3,7 @@ import App_store from "../../public/logo/app-store.webp";
 import Play_store from "../../public/logo/play-store.webp";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
 import {  Instagram } from "lucide-react";
-import Footer1 from "./footer1";
+import Footer1 from "./Footer1";
 import amazon from '../../public/payment/amazonpay.svg';
 import american from '../../public/payment/american-express.svg';
 import mastercard from '../../public/payment/mastercard.svg';

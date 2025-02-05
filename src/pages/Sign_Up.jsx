@@ -1,7 +1,7 @@
 import React from "react";
 import Signup from "../../public/sign_in/signup.svg";
 import { EyeOff } from "lucide-react";
-import Register_Navbar from "../components/register-navbar";
+import Register_Navbar from "../components/Register_Navbar";
 // import { NavLink } from 'react-router'
 
 export default function Sign_Up() {
