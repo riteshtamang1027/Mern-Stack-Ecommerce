@@ -78,13 +78,13 @@ export default function Product_Description() {
               {/* <img className="lg:h-[70vh]  xl:h-full" src={img1} alt="Image" /> */}
             </SwiperSlide>
             <SwiperSlide>
-              <img className="lg:h-[70vh]  xl:h-full" src={img2} alt="Image" />
+              <InnerImageZoom className="lg:h-[70vh]  xl:h-full" src={img2} alt="Image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className="lg:h-[70vh]  xl:h-full" src={img3} alt="Image" />
+              <InnerImageZoom className="lg:h-[70vh]  xl:h-full" src={img3} alt="Image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className="lg:h-[70vh]  xl:h-full" src={img4} alt="Image" />
+              <InnerImageZoom className="lg:h-[70vh]  xl:h-full" src={img4} alt="Image" />
             </SwiperSlide>
           </Swiper>
           <Swiper

@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import Docs from "./pages/docs.jsx";
 import "./index.css";
@@ -22,15 +22,22 @@ import Reset_Password from "./pages/reset-password.jsx";
 import Sign_In from "./pages/sign-in.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      {/* <div className="space-y-4">
+export function Root(){
+  const location =useLocation()
+  return (
+ 
+    <StrictMode>
+    
+      { location.pathname!=="/sign_in" && location.pathname!=="/sign_up" && location.pathname!=="/reset_password" &&
+
+       <div className="space-y-4">
         <Top_Navbar />
         <Middle_Navbar />
         <Bottom_Navbar />
         <hr className="text-gray-200" />
-      </div> */}
+      </div>
+
+       }
 
       <Routes>
         <Route path="/" element={<App />} />
@@ -44,19 +51,17 @@ createRoot(document.getElementById("root")).render(
         <Route path="/sign_up" element={<Sign_Up />} />
         <Route path="/reset_password" element={<Reset_Password />} />
         <Route path="/sign_in" element={<Sign_In />} />
-        {/* <Route path="/signin-card" element={<Signin_Card />} /> */}
-
-
-
-
-        
-
-        
-
         <Route path="/categories/:id" element={<Single_Category />} />
         <Route path="/blog-section/:id" element={<Blog_Section />} />
       </Routes>
-      <Footer/>
-    </BrowserRouter>
+      { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
+        <Footer/>
+      }
+      
+  
   </StrictMode>
-);
+
+  )
+
+}
+createRoot(document.getElementById("root")).render(   <BrowserRouter>   <Root />     </BrowserRouter>  );
