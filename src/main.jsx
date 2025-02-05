@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
 
-import Footer from "./components/Footer.jsx";
 import Top_Navbar from "./components/Top_Navbar.jsx";
 import Middle_Navbar from "./components/Middle_Navbar.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
@@ -32,9 +31,9 @@ export function Root(){
 
       </Routes>
 
-      { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
+      {/* { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
         <Footer/>
-      }
+      } */}
   </StrictMode>
   )
 }
