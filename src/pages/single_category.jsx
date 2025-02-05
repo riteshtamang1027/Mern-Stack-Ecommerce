@@ -10,9 +10,7 @@ import seventh from "../../public/popularproducts/product7.jpg";
 import eighth from "../../public/popularproducts/product8.jpg";
 import nineth from "../../public/popularproducts/product9.jpg";
 import tenth from "../../public/popularproducts/product10.jpg";
-// import eleven from "../../public/popularproducts/product11.jpg";
-// import twelve from "../../public/popularproducts/product12.jpg";
-// import thirteen from "../../public/popularproducts/product13.jpg";
+
 
 export default function Single_Category() {
   return (
