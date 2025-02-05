@@ -3,23 +3,23 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
-import Dashboard from "./pages/dashboard.jsx";
-import Mega_Menu from "./pages/mega_menu.jsx";
-import Shop from "./pages/shop.jsx";
-import Stores from "./pages/stores.jsx";
-import Single_Category from "./pages/single_category.jsx";
-import Middle_Navbar from "./components/middle_navbar.jsx";
-import Footer from "./components/footer.jsx";
-import Blog_Section from "./pages/blog-section.jsx";
-import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
-import Blog from "./pages/blog.jsx";
-import Product_Description from "./pages/product-description.jsx";
 // import Sign_In from "./pages/sign-in.jsx";
+import Docs from "./pages/docs.jsx";
+import Top_Navbar from "./components/top_navbar.jsx";
+import Middle_Navbar from "./components/middle_navbar.jsx";
+import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
+import Dashboard from "./pages/dashboard.jsx";
+import Blog from "./pages/blog.jsx";
+import Mega_Menu from "./pages/mega_menu.jsx";
+import Stores from "./pages/stores.jsx";
+import Shop from "./pages/shop.jsx";
 import Sign_Up from "./pages/sign-up.jsx";
 import Reset_Password from "./pages/reset-password.jsx";
 import Sign_In from "./pages/sign-in.jsx";
-import Docs from "./pages/docs.jsx";
-import Top_Navbar from "./components/top_navbar.jsx";
+import Single_Category from "./pages/single_category.jsx";
+import Blog_Section from "./pages/blog-section.jsx";
+import Footer from "./components/footer.jsx";
+import Product_Description from "./pages/product-description.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){
@@ -36,15 +36,13 @@ export function Root(){
         <Bottom_Navbar />
         <hr className="text-gray-200" />
       </div>
-
        }
-
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pages" element={<Blog />} />
-        <Route path="/mega_menu" element={<Mega_Menu />} />
+        <Route path="/mega_menu" element={<Mega_Menu/>} />
         <Route path="/stores" element={<Stores />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/shop/:id" element={<Product_Description />} />
