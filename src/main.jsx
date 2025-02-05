@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
-import Docs from "./pages/docs.jsx";
 import "./index.css";
 import Dashboard from "./pages/dashboard.jsx";
 import Mega_Menu from "./pages/mega_menu.jsx";
@@ -20,6 +19,7 @@ import Product_Description from "./pages/product-description.jsx";
 import Sign_Up from "./pages/sign-up.jsx";
 import Reset_Password from "./pages/reset-password.jsx";
 import Sign_In from "./pages/sign-in.jsx";
+import Docs from "./pages/docs.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){
