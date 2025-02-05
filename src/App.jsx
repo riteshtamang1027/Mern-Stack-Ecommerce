@@ -5,7 +5,6 @@ import Banner_Section from "./components/banner_section";
 import Popular_Product_Section from "./components/popular_product_section";
 import Uupper_Footer_Section from "./components/upper_footer_section";
 import Home_Morden from "./components/home_morden";
-import Sign_In from "./pages/Sign_In";
 
 export default function App() {
 
@@ -21,7 +20,6 @@ export default function App() {
       <Uupper_Footer_Section />
 
 
-      {/* <Sign_In/> */}
 
     </div>
   );

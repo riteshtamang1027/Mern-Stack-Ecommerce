@@ -3,14 +3,12 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
-// import Sign_In from "./pages/sign-in.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
 import Sign_Up from "./pages/Sign_Up.jsx";
 import Reset_Password from "./pages/Reset_Password.jsx";
 import Sign_In from "./pages/Sign_In.jsx";
 import Blog_Section from "./pages/Blog_Section.jsx";
 import Product_Description from "./pages/Product_Description.jsx";
-import Docs from "./pages/Docs.jsx";
 import Top_Navbar from "./components/Top_Navbar.jsx";
 import Middle_Navbar from "./components/Middle_Navbar.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
@@ -20,7 +18,6 @@ import Stores from "./pages/Stores.jsx";
 import Shop from "./pages/Shop.jsx";
 import Single_Category from "./pages/Single_Category.jsx";
 import Footer from "./components/Footer.jsx";
-// import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){
   const location =useLocation()
@@ -39,7 +36,6 @@ export function Root(){
        }
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/docs" element={<Docs />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pages" element={<Blog />} />
         <Route path="/mega_menu" element={<Mega_Menu/>} />
@@ -55,11 +51,7 @@ export function Root(){
       { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
         <Footer/>
       }
-      
-  
   </StrictMode>
-
   )
-
 }
-createRoot(document.getElementById("root")).render(   <BrowserRouter>   <Root />     </BrowserRouter>  );
+createRoot(document.getElementById("root")).render( <BrowserRouter>   <Root />  </BrowserRouter>  );
