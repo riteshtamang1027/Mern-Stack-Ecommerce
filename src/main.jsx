@@ -8,7 +8,6 @@ import Mega_Menu from "./pages/mega_menu.jsx";
 import Shop from "./pages/shop.jsx";
 import Stores from "./pages/stores.jsx";
 import Single_Category from "./pages/single_category.jsx";
-import Top_Navbar from "./components/top_navbar.jsx";
 import Middle_Navbar from "./components/middle_navbar.jsx";
 import Footer from "./components/footer.jsx";
 import Blog_Section from "./pages/blog-section.jsx";
@@ -20,6 +19,7 @@ import Sign_Up from "./pages/sign-up.jsx";
 import Reset_Password from "./pages/reset-password.jsx";
 import Sign_In from "./pages/sign-in.jsx";
 import Docs from "./pages/docs.jsx";
+import Top_Navbar from "./components/top_navbar.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){
