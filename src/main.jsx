@@ -5,7 +5,6 @@ import App from "./App.jsx";
 import "./index.css";
 // import Sign_In from "./pages/sign-in.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
-import Shop from "./pages/Shop.jsx";
 import Sign_Up from "./pages/Sign_Up.jsx";
 import Reset_Password from "./pages/Reset_Password.jsx";
 import Sign_In from "./pages/Sign_In.jsx";
@@ -20,6 +19,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Blog from "./pages/Blog.jsx";
 import Mega_Menu from "./pages/Mega_Menu.jsx";
 import Stores from "./pages/Stores.jsx";
+import Shop from "./pages/Shop.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){
