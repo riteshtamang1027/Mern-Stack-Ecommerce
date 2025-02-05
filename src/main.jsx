@@ -17,9 +17,9 @@ import Single_Category from "./pages/Single_Category.jsx";
 import Blog_Section from "./pages/Blog_Section.jsx";
 import Footer from "./components/Footer.jsx";
 import Product_Description from "./pages/Product_Description.jsx";
-import Docs from "./pages/docs.jsx";
-import Top_Navbar from "./components/top_navbar.jsx";
-import Middle_Navbar from "./components/middle_navbar.jsx";
+import Docs from "./pages/Docs.jsx";
+import Top_Navbar from "./components/Top_Navbar.jsx";
+import Middle_Navbar from "./components/Middle_Navbar.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){

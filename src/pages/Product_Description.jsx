@@ -24,7 +24,7 @@ import second from "../../public/popularproducts/product2.jpg";
 import third from "../../public/popularproducts/product3.jpg";
 import forth from "../../public/popularproducts/product4.jpg";
 import fifth from "../../public/popularproducts/product5.jpg";
-import Single_Product_Card from "../components/Single_Product_Card";
+import Single_Product_Card from "../components/Single_Product_card";
 import Child_Component from "../components/Child_Component";
 export default function Product_Description() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
