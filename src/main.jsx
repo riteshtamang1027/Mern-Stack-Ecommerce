@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
 // import Sign_In from "./pages/sign-in.jsx";
-import Docs from "./pages/docs.jsx";
 import Top_Navbar from "./components/top_navbar.jsx";
 import Middle_Navbar from "./components/middle_navbar.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
@@ -20,6 +19,7 @@ import Single_Category from "./pages/single_category.jsx";
 import Blog_Section from "./pages/blog-section.jsx";
 import Footer from "./components/footer.jsx";
 import Product_Description from "./pages/product-description.jsx";
+import Docs from "./pages/docs.jsx";
 // import Signin_Card from "./pages/signin_card.jsx";
 
 export function Root(){
