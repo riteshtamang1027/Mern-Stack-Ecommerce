@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
 import Top_Navbar from "./components/Top_Navbar.jsx";
-import Mega_Menu from "./pages/Mega_Menu.jsx";
+// import Mega_Menu from "./pages/Mega_Menu.jsx";
 import Blog from "./pages/Blog.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
 
@@ -41,7 +41,7 @@ export function Root() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/pages" element={<Blog />} />
-        <Route path="/mega_menu" element={<Mega_Menu />} />
+        {/* <Route path="/mega_menu" element={<Mega_Menu />} /> */}
         {/* <Route path="/stores" element={<Stores />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/docs" element={<Docs />} />
