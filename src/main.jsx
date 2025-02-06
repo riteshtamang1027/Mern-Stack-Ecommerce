@@ -18,7 +18,7 @@ import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
 // import Sign_In from "./pages/Sign_In.jsx";
 // import Single_Category from "./pages/Single_Category.jsx";
 // import Blog_Section from "./pages/Blog_Section.jsx";
-import Footer from "./components/Footer.jsx";
+// import Footer from "./components/Footer.jsx";
 
 export function Root() {
   const location = useLocation();
@@ -49,9 +49,7 @@ export function Root() {
         <Route path="/blog-section/:id" element={<Blog_Section />} /> */}
       </Routes>
 
-      {location.pathname !== "/sign_in" &&
-        location.pathname !== "/sign_up" &&
-        location.pathname !== "/reset_password" && <Footer />}
+     {/* <Footer /> */}
     </StrictMode>
   );
 }
