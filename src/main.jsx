@@ -3,22 +3,26 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import App from "./App.jsx";
 import "./index.css";
-
 import Top_Navbar from "./components/Top_Navbar.jsx";
-import Middle_Navbar from "./components/Middle_Navbar.jsx";
+import Mega_Menu from "./pages/Mega_Menu.jsx";
+import Blog from "./pages/Blog.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
-import Blog from "./pages/Blog";
-import Mega_Menu from "./pages/Mega_Menu";
-import Stores from "./pages/Stores";
-import Shop from "./pages/Shop";
-import Docs from "./pages/Docs";
-import Product_Description from "./pages/Product_Description";
-import Sign_Up from "./pages/Sign_Up";
-import Reset_Password from "./pages/Reset_Password";
-import Sign_In from "./pages/Sign_In";
-import Single_Category from "./pages/Single_Category";
-import Blog_Section from "./pages/Blog_Section";
-import Footer from "./components/Footer";
+
+// import Top_Navbar from "./components/Top_Navbar.jsx";
+// import Middle_Navbar from "./components/Middle_Navbar.jsx";
+// import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
+// import Blog from "./pages/Blog";
+// import Mega_Menu from "./pages/Mega_Menu";
+// import Stores from "./pages/Stores";
+// import Shop from "./pages/Shop";
+// import Docs from "./pages/Docs";
+// import Product_Description from "./pages/Product_Description";
+// import Sign_Up from "./pages/Sign_Up";
+// import Reset_Password from "./pages/Reset_Password";
+// import Sign_In from "./pages/Sign_In";
+// import Single_Category from "./pages/Single_Category";
+// import Blog_Section from "./pages/Blog_Section";
+// import Footer from "./components/Footer";
 
 export function Root() {
   const location = useLocation();
@@ -38,7 +42,7 @@ export function Root() {
         <Route path="/" element={<App />} />
         <Route path="/pages" element={<Blog />} />
         <Route path="/mega_menu" element={<Mega_Menu />} />
-        <Route path="/stores" element={<Stores />} />
+        {/* <Route path="/stores" element={<Stores />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="/shop/:id" element={<Product_Description />} />
@@ -46,7 +50,7 @@ export function Root() {
         <Route path="/reset_password" element={<Reset_Password />} />
         <Route path="/sign_in" element={<Sign_In />} />
         <Route path="/categories/:id" element={<Single_Category />} />
-        <Route path="/blog-section/:id" element={<Blog_Section />} />
+        <Route path="/blog-section/:id" element={<Blog_Section />} /> */}
       </Routes>
 
      <Footer />
