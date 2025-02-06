@@ -8,7 +8,7 @@ import Top_Navbar from "./components/Top_Navbar.jsx";
 import Middle_Navbar from "./components/Middle_Navbar.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
 import Blog from "./pages/Blog.jsx";
-import Mega_Menu from "./pages/Mega_Menu.jsx";
+import Mega_Menu from "./pages/Mega_Menu";
 import Stores from "./pages/Stores.jsx";
 import Shop from "./pages/Shop.jsx";
 import Docs from "./pages/Docs.jsx";
