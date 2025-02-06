@@ -9,7 +9,7 @@ export default function Reset_Password() {
     <>
       <Registation_Navbar />
 
-      <div className="flex w-8/12 mx-auto max-sm:-mt-4 mt-12 max-sm:w-10/12  items-center ">
+      <div className="flex w-8/12 mx-auto max-sm:-mt-4 mt-24 max-sm:w-10/12  items-center ">
       <div className="grid sm:grid-rows-2 md:grid-cols-2 gap-x-36">
 
       <img src={img} alt="" />

@@ -9,7 +9,7 @@ export default function Sign_In() {
   return (
     <div>
       <Registation_Navbar />
-      <div className="flex w-8/12 mx-auto mt-12 max-sm:w-10/12 max-sm:-mt-4 items-center ">
+      <div className="flex w-8/12 mx-auto mt-24 max-sm:w-10/12 max-sm:-mt-4 items-center ">
        <div className="grid sm:grid-rows-2 md:grid-cols-2 gap-x-36">
        <img className="md:w-[60vw] "  src={SignIn} alt="Image" />
         <div className="space-y-2  ">
