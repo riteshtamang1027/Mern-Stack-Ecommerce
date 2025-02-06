@@ -7,8 +7,8 @@ export default function Registation_Navbar() {
     <div className="  shadow-xl">
       <div className="w-10/12 mx-auto flex justify-between items-center py-4">
         <img src={mylogo} alt="Logo" />
-        <p className="text-sm">
-          <span className=" opacity-90"> Already have an account?</span>{" "}
+        <p className="text-sm whitespace-nowrap">
+          <span className=" opacity-90 "> Already have an account?</span>{" "}
           <NavLink to={"/sign_in"} className="font-semibold cursor-pointer">
             {" "}
             Sign in
