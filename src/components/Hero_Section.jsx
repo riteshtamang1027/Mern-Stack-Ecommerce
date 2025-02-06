@@ -11,7 +11,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { ArrowRight } from "lucide-react";
 
 
-export default function Hero_section() {
+export default function Hero_Section() {
   return (
     <div className="mt-8">
     <Swiper
