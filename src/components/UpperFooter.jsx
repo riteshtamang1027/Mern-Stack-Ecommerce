@@ -1,7 +1,7 @@
 import { Clock, Gift, Package, RefreshCw } from "lucide-react";
 import React from "react";
 
-export default function Uupper_Footer_Section() {
+export default function UpperFooter() {
   return (
     <div className="flex w-10/12 mx-auto p-4 mt-24 gap-8">
       <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

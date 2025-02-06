@@ -1,10 +1,11 @@
 import React from "react";
-import Hero_Section_Slider from "./components/Hero_Section_Slider.jsx";
+import Hero_Section_Slider from "./components/Hero_Section_Slider";
+import Feature_Categories_Section from "./components/Feature_Categories_Section";
 import Banner_Section from "./components/Banner_Section";
 import Popular_Product_Section from "./components/Popular_Product_Section";
 import Home_Morden from "./components/Home_Morden";
-import Uupper_Footer_Section from "./components/Upper_Footer_Section";
-import Feature_Categories_Section from "./components/Feature_Categories_Section";
+import UpperFooter from "./components/UpperFooter";
+
 
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
       <Banner_Section />
       <Popular_Product_Section />
       <Home_Morden />
-      <Uupper_Footer_Section />
+      <UpperFooter />
 
 
     </div>
