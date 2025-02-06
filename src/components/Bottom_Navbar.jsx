@@ -16,7 +16,7 @@ export default function Bottom_Navbar() {
        <NavLink to={"/stores"} >Stores</NavLink>
        <NavLink to={"/mega_menu"} className=' whitespace-nowrap'>Mega Menu</NavLink>
        <NavLink to={"/pages"} >Blogs</NavLink>
-       <NavLink to={"/dashboard"}>DashBoard</NavLink>
+       <p>DashBoard</p>
        <NavLink to="/docs">Docs</NavLink>
 
         </div>

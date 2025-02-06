@@ -7,7 +7,6 @@ import "./index.css";
 import Top_Navbar from "./components/Top_Navbar.jsx";
 import Middle_Navbar from "./components/Middle_Navbar.jsx";
 import Bottom_Navbar from "./components/Bottom_Navbar.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
 import Blog from "./pages/Blog.jsx";
 import Mega_Menu from "./pages/Mega_Menu.jsx";
 import Stores from "./pages/Stores.jsx";
@@ -21,28 +20,24 @@ import Single_Category from "./pages/Single_Category.jsx";
 import Blog_Section from "./pages/Blog_Section.jsx";
 import Footer from "./components/Footer.jsx";
 
-
-export function Root(){
-  const location =useLocation()
+export function Root() {
+  const location = useLocation();
   return (
- 
     <StrictMode>
-    
-      { location.pathname!=="/sign_in" && location.pathname!=="/sign_up" && location.pathname!=="/reset_password" &&
-
-       <div className="space-y-4">
-        <Top_Navbar />
-        <Middle_Navbar />
-        <Bottom_Navbar />
-        <hr className="text-gray-200" />
-      </div>
-       }
+      {location.pathname !== "/sign_in" &&
+        location.pathname !== "/sign_up" &&
+        location.pathname !== "/reset_password" && (
+          <div className="space-y-4">
+            <Top_Navbar />
+            <Middle_Navbar />
+            <Bottom_Navbar />
+            <hr className="text-gray-200" />
+          </div>
+        )}
       <Routes>
-
         <Route path="/" element={<App />} />
-        <Route path="/dashboard" element={<Dashboard></Dashboard>} />
         <Route path="/pages" element={<Blog />} />
-        <Route path="/mega_menu" element={<Mega_Menu/>} />
+        <Route path="/mega_menu" element={<Mega_Menu />} />
         <Route path="/stores" element={<Stores />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/docs" element={<Docs />} />
@@ -52,14 +47,17 @@ export function Root(){
         <Route path="/sign_in" element={<Sign_In />} />
         <Route path="/categories/:id" element={<Single_Category />} />
         <Route path="/blog-section/:id" element={<Blog_Section />} />
-        
-
       </Routes>
 
-      { location.pathname!=="/sign_in"&& location.pathname!=="/sign_up"&& location.pathname!=="/reset_password"&& 
-        <Footer/>
-      }
-  </StrictMode>
-  )
+      {location.pathname !== "/sign_in" &&
+        location.pathname !== "/sign_up" &&
+        location.pathname !== "/reset_password" && <Footer />}
+    </StrictMode>
+  );
 }
-createRoot(document.getElementById("root")).render( <BrowserRouter>   <Root/>  </BrowserRouter>  );
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    {" "}
+    <Root />{" "}
+  </BrowserRouter>
+);
