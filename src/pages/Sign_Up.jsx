@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import Signup from "../../public/sign_in/signup.svg";
 import { EyeOff } from "lucide-react";
 
-import Registation_Navbar from '../components/Registation_Navbar'
+import Registation_Navbar from "../components/Registation_Navbar";
 
 export default function Sign_Up() {
   return (
@@ -65,5 +65,5 @@ export default function Sign_Up() {
         </div>
       </div>
     </>
-  )
+  );
 }

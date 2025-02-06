@@ -5,8 +5,8 @@ import img3 from "../../public/product/3.jpg";
 import img4 from "../../public/product/4.jpg";
 
 import ReactStars from "react-stars";
-import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
-import InnerImageZoom from 'react-inner-image-zoom'
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import InnerImageZoom from "react-inner-image-zoom";
 import { ArrowRightLeft, Heart, ShoppingBag } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +15,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-
 
 import { FreeMode, Thumbs } from "swiper/modules";
 
@@ -26,29 +25,28 @@ import forth from "../../public/popularproducts/product4.jpg";
 import fifth from "../../public/popularproducts/product5.jpg";
 import Single_Product_Card from "../components/Single_Product_Card";
 
-
 export default function Product_Discription() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-    // State in react with hooks.
-    // first is veriable and second one is setterfunction which have access to change the vlaue of first variable.
-    const [count, setCount] = useState(1);
-    // const num = document.querySelector("#number");
-    // count.innerText=num ;
-  
-    // console.log(count)
-  
-    // props (Propreties in react)
-    // props can only be passed from parent to child.
-    // Props cannot be change by the child component
-    // const name = "Ritesh Tamang";
-  
-    // UsEffect hook
-    // Its runs after the page reloads an depends upon dependency array
-    useEffect(() => {
-      console.log("UseEffect is running");
-    }, [count]);
-    // [] dependency array
+  // State in react with hooks.
+  // first is veriable and second one is setterfunction which have access to change the vlaue of first variable.
+  const [count, setCount] = useState(1);
+  // const num = document.querySelector("#number");
+  // count.innerText=num ;
+
+  // console.log(count)
+
+  // props (Propreties in react)
+  // props can only be passed from parent to child.
+  // Props cannot be change by the child component
+  // const name = "Ritesh Tamang";
+
+  // UsEffect hook
+  // Its runs after the page reloads an depends upon dependency array
+  useEffect(() => {
+    console.log("UseEffect is running");
+  }, [count]);
+  // [] dependency array
   return (
     <div className="w-10/12 mx-auto  ">
       <div className=" mt-2 font-semibold whitespace-nowrap ">
@@ -78,13 +76,25 @@ export default function Product_Discription() {
               {/* <img className="lg:h-[70vh]  xl:h-full" src={img1} alt="Image" /> */}
             </SwiperSlide>
             <SwiperSlide>
-              <InnerImageZoom className="lg:h-[70vh]  xl:h-full" src={img2} alt="Image" />
+              <InnerImageZoom
+                className="lg:h-[70vh]  xl:h-full"
+                src={img2}
+                alt="Image"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <InnerImageZoom className="lg:h-[70vh]  xl:h-full" src={img3} alt="Image" />
+              <InnerImageZoom
+                className="lg:h-[70vh]  xl:h-full"
+                src={img3}
+                alt="Image"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <InnerImageZoom className="lg:h-[70vh]  xl:h-full" src={img4} alt="Image" />
+              <InnerImageZoom
+                className="lg:h-[70vh]  xl:h-full"
+                src={img4}
+                alt="Image"
+              />
             </SwiperSlide>
           </Swiper>
           <Swiper
@@ -178,26 +188,26 @@ export default function Product_Discription() {
           <hr className="text-gray-300" />
 
           <div className="flex items-center gap-x-36 ">
-          <div className="text-sm font-semibold opacity-50 space-y-6  ">
-            <p>Product Code:</p>
-            <p>Availability:</p>
-            <p>Type:</p>
-            <p>Shipping:</p>
-          </div>
-          <div>
             <div className="text-sm font-semibold opacity-50 space-y-6  ">
-              <p>FBB00255</p>
-              <p> In Stock</p>
-              <p> Fruits</p>
-              <p className="text-xs">
-                01 day shipping.{" "}
-                <span className="opacity-70">( Free pickup today)</span>{" "}
-              </p>
-            </div>{" "}
+              <p>Product Code:</p>
+              <p>Availability:</p>
+              <p>Type:</p>
+              <p>Shipping:</p>
+            </div>
+            <div>
+              <div className="text-sm font-semibold opacity-50 space-y-6  ">
+                <p>FBB00255</p>
+                <p> In Stock</p>
+                <p> Fruits</p>
+                <p className="text-xs">
+                  01 day shipping.{" "}
+                  <span className="opacity-70">( Free pickup today)</span>{" "}
+                </p>
+              </div>{" "}
+            </div>
           </div>
-        </div>
-          <button  className="w-max px-4 py-2 rounded-md border border-gray-500 opacity-60 text-center hover:text-white  hover:bg-gray-400 focus:bg-gray-400 focus:text-white " >
-          Share
+          <button className="w-max px-4 py-2 rounded-md border border-gray-500 opacity-60 text-center hover:text-white  hover:bg-gray-400 focus:bg-gray-400 focus:text-white ">
+            Share
           </button>
           {/* </select> */}
         </div>
@@ -211,54 +221,53 @@ export default function Product_Discription() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 const Products = [
-    {
-      Image: first,
-      Category: "Snack & Munchies",
-      Name: "Haldiram's Sev Bhujia",
-      Rating: 4.5,
-      Reviews: 4,
-      Price: "$22.4",
-      Previous_Price: "$22.9",
-    },
-    {
-      Image: second,
-      Category: "Bakery & Biscuits",
-      Name: "NutriChoice Digestive",
-      Rating: 4.5,
-      Reviews: 4,
-      Price: "$2.64",
-      Previous_Price: "$3.64",
-    },
-    {
-      Image: third,
-      Category: "Bakery & Biscuits",
-      Name: "Cadbury 5 Star Chocolate",
-      Rating: 4.5,
-      Reviews: 4,
-      Price: "$24.5",
-      Previous_Price: "$24.5",
-    },
-    {
-      Image: forth,
-      Category: "Snack & Munchies",
-      Name: "Onion Flavour Potato",
-      Rating: 4.5,
-      Reviews: 4,
-      Price: "$24.5",
-      Previous_Price: "$24.5",
-    },
-    {
-      Image: fifth,
-      Category: "Instant Food",
-      Name: "Salted Instant Popcorn",
-      Rating: 4.5,
-      Reviews: 4,
-      Price: "$24.5",
-      Previous_Price: "$24.5",
-    },
-  ];
-  
+  {
+    Image: first,
+    Category: "Snack & Munchies",
+    Name: "Haldiram's Sev Bhujia",
+    Rating: 4.5,
+    Reviews: 4,
+    Price: "$22.4",
+    Previous_Price: "$22.9",
+  },
+  {
+    Image: second,
+    Category: "Bakery & Biscuits",
+    Name: "NutriChoice Digestive",
+    Rating: 4.5,
+    Reviews: 4,
+    Price: "$2.64",
+    Previous_Price: "$3.64",
+  },
+  {
+    Image: third,
+    Category: "Bakery & Biscuits",
+    Name: "Cadbury 5 Star Chocolate",
+    Rating: 4.5,
+    Reviews: 4,
+    Price: "$24.5",
+    Previous_Price: "$24.5",
+  },
+  {
+    Image: forth,
+    Category: "Snack & Munchies",
+    Name: "Onion Flavour Potato",
+    Rating: 4.5,
+    Reviews: 4,
+    Price: "$24.5",
+    Previous_Price: "$24.5",
+  },
+  {
+    Image: fifth,
+    Category: "Instant Food",
+    Name: "Salted Instant Popcorn",
+    Rating: 4.5,
+    Reviews: 4,
+    Price: "$24.5",
+    Previous_Price: "$24.5",
+  },
+];

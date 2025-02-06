@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function Top_Navbar() {
   return (
@@ -8,5 +8,5 @@ export default function Top_Navbar() {
         <p>English</p>
       </div>
     </div>
-  )
+  );
 }

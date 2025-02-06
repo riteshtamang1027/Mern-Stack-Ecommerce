@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Clock, Gift, Package, RefreshCw } from "lucide-react";
 
 export default function Icons_Section() {
@@ -14,28 +14,28 @@ export default function Icons_Section() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 const Icons = [
-    {
-      icon: <Clock size={40} strokeWidth={1.2} />,
-      name: "10 minute grocery now",
-      text: "Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.",
-    },
-    {
-      icon: <Gift size={40} strokeWidth={1.5} />,
-      name: "Best Prices & Offers",
-      text: "Cheaper prices than your local supermarket, great cashback offers to top it off. Get best pricess & offers.",
-    },
-    {
-      icon: <Package size={40} strokeWidth={1.5} />,
-      name: "Wide Assortment",
-      text: "Choose from 5000+ products across food, personal care, household, bakery, veg and non-veg & other categories.",
-    },
-    {
-      icon: <RefreshCw size={40} strokeWidth={1.5} />,
-      name: "Easy Returns",
-      text: "Not satisfied with a product? Return it at the doorstep & get a refund within hours. No questions asked policy.",
-    },
-  ];
+  {
+    icon: <Clock size={40} strokeWidth={1.2} />,
+    name: "10 minute grocery now",
+    text: "Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.",
+  },
+  {
+    icon: <Gift size={40} strokeWidth={1.5} />,
+    name: "Best Prices & Offers",
+    text: "Cheaper prices than your local supermarket, great cashback offers to top it off. Get best pricess & offers.",
+  },
+  {
+    icon: <Package size={40} strokeWidth={1.5} />,
+    name: "Wide Assortment",
+    text: "Choose from 5000+ products across food, personal care, household, bakery, veg and non-veg & other categories.",
+  },
+  {
+    icon: <RefreshCw size={40} strokeWidth={1.5} />,
+    name: "Easy Returns",
+    text: "Not satisfied with a product? Return it at the doorstep & get a refund within hours. No questions asked policy.",
+  },
+];
