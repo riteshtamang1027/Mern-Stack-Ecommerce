@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -19,9 +19,20 @@ import Product_Discription from "./pages/Product_Discription.jsx";
 import Sign_Up from "./pages/Sign_Up.jsx";
 import Sign_In from "./pages/Sign_In.jsx";
 import Reset_Password from "./pages/Reset_Password.jsx";
+import SignUp from "./pages/SignUp.jsx";
 
 export function Root() {
   const location = useLocation();
+  const [Signup, setSignUp] = useState(false);
+  const show = () => setSignUp(true);
+  const hide = () => setSignUp(false);
+  useEffect(() => {
+    document.body.style.overflowY = "hidden";
+
+    return () => {
+      document.body.style.overflowY = "scroll";
+    };
+  }, []);
   return (
     <StrictMode>
       {location.pathname !== "/sign_in" &&
@@ -29,9 +40,16 @@ export function Root() {
         location.pathname !== "/sign_up" && (
           <div className="space-y-4">
             <Top_Navbar />
-            <Middle_Navbar />
+            <Middle_Navbar show={show} />
             <Bottom_Navbar />
             <hr className="text-gray-200" />
+          </div>
+        )}
+      {location.pathname !== "/sign_in" &&
+        location.pathname !== "/reset_password" &&
+        location.pathname !== "/sign_up" && (
+          <div className="space-y-4">
+            {Signup === true && <SignUp hide={hide} />}
           </div>
         )}
 

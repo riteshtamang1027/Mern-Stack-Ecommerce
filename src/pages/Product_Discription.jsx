@@ -31,8 +31,6 @@ export default function Product_Discription() {
   // State in react with hooks.
   // first is veriable and second one is setterfunction which have access to change the vlaue of first variable.
   const [count, setCount] = useState(1);
-  // const num = document.querySelector("#number");
-  // count.innerText=num ;
 
   // console.log(count)
 
@@ -44,7 +42,6 @@ export default function Product_Discription() {
   // UsEffect hook
   // Its runs after the page reloads an depends upon dependency array
   useEffect(() => {
-    console.log("UseEffect is running");
   }, [count]);
   // [] dependency array
   return (

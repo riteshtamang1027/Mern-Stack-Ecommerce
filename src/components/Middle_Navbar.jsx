@@ -3,9 +3,8 @@ import { Heart, MapPin } from "lucide-react";
 import { User } from "lucide-react";
 import { ShoppingBag } from "lucide-react";
 import mylogo from "../../public/logo/logo.svg";
-import { NavLink } from "react-router";
 
-export default function Middle_Navbar() {
+export default function Middle_Navbar({show}) {
   return (
     <div className="flex  justify-between items-center w-10/12 mx-auto flex-wrap ">
       <div className="flex items-center gap-12 ">
@@ -29,9 +28,9 @@ export default function Middle_Navbar() {
 
       <div className="flex space-x-4 cursor-pointer">
         <Heart size={28} strokeWidth={1} />
-        <NavLink to={"/sign_in"}>
-          <User size={28} strokeWidth={1} />
-        </NavLink>
+       
+          <User onClick={show} size={28} strokeWidth={1} />
+      
         <ShoppingBag size={28} strokeWidth={1} />
       </div>
     </div>
