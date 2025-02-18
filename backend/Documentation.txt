@@ -19,17 +19,12 @@ Application Programming  Interface
 Steps to create a backend server using express js
 1.Create a backend folder and go inside it 
 2.npm init -y
-3. npm i express
+3.npm i express
 4.npm i mongoos 
 5."type":"module" add this in package json
 6.npm i nodemon -->keeps the server running (nodemon server.js)
-
 
 MongoDB
 -->MongoDB is a NoSQL database.
 -->It stores data in the form of documents and collection.
 -->Backend cann't talk to database directly, It should use mongoos to talk database
-
-
-
-
