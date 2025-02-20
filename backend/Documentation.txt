@@ -2,7 +2,6 @@
 -->In early days  js was used to  frontend only as scription language for the browser.
 -->In this period the js was not supported in the server, so python, Java ,php etc were used as backend.
 
-
 -->Later on the concept of nodejs was introduced as a runtime for the js on the server side.
 -->Now the runtime (nodejs) is responsibe for executing the js code on the server side.
 
@@ -20,7 +19,7 @@ Steps to create a backend server using express js
 1.Create a backend folder and go inside it 
 2.npm init -y
 3.npm i express
-4.npm i mongoos 
+4.npm i mongoose
 5."type":"module" add this in package json
 6.npm i nodemon -->keeps the server running (nodemon server.js)
 
