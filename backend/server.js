@@ -10,7 +10,7 @@ app.use(express.json());
 // Database config
 try {
   mongoose.connect(
-    "mongodb+srv://riteshtamang1027:YJHQAapIRkcWnIkX@cluster0.k0tbn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://riteshtamang1027:cFU3k5nLp2jAIMM4@cluster0.k6mob.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   );
   console.log("Mongodb connected successfully");
 } catch (error) {
@@ -93,16 +93,13 @@ app.patch("/products/:id", async (req, res) => {
 // Delete a product
 app.delete("/products/:id", async (req, res) => {
   try {
-    const checkProduct = await products.findById(req.params.id);
-
-    if (!checkProduct) {
-      return res.status(404).json({
-        message: "Product delete successfully enjoy now",
-      });
-    }
-
     const deleteProduct = await products.findByIdAndDelete(req.params.id);
 
+    if (!deleteProduct) {
+      return res.status(404).json({
+        message: "Product is not available now",
+      });
+    }
     return res.status(200).json({
       message: "Product deleted successfully",
       data: deleteProduct,
