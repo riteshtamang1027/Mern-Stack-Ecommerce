@@ -42,7 +42,7 @@ export function Root() {
       {location.pathname !== "/sign_in" &&
         location.pathname !== "/reset_password" &&
         location.pathname !== "/sign_up" && (
-          <div className="space-y-4">
+          <div className="space-y-4 h-screen">
             {Signup === true && <SignUp hide={hide} />}
           </div>
         )}
