@@ -1,4 +1,5 @@
 import React from "react";
+
 import first from "../../public/popularproducts/product1.jpg";
 import second from "../../public/popularproducts/product2.jpg";
 import third from "../../public/popularproducts/product3.jpg";

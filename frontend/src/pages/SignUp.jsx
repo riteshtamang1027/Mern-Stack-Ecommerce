@@ -4,8 +4,8 @@ import { NavLink } from "react-router";
 export default function SignUp({hide}) {
   return (
     <>
-       <div onClick={hide} className="bg-black opacity-20 fixed inset-0 ">  </div>
-      <div className="w-4/12 mx-auto bg-white rounded-md p-8 space-y-4 fixed z-50 left-100 ">
+       <div onClick={hide} className="fixed inset-0 ">  </div>
+      <div className="w-4/12 mx-auto bg-white rounded-md p-8 space-y-4 fixed z-50 left-100 shadow-2xl ">
         <div className="flex items-center justify-between">
           <p className="text-3xl font-bold opacity-80 whitespace-nowrap">
             Sign Up

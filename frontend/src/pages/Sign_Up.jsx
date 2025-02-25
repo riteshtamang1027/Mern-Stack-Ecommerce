@@ -9,7 +9,7 @@ export default function Sign_Up() {
     <>
       <Registation_Navbar />
 
-      <div className="flex w-8/12 mx-auto mt-24 max-sm:mt-8 max-sm:w-10/12  items-center ">
+      <div className="flex w-8/12 mx-auto mt-24 md:-mb-96 max-sm:mt-8 max-sm:w-10/12  items-center ">
       <div className="grid sm:grid-rows-2 md:grid-cols-2 gap-x-36">
       <img src={Signup} alt="" />
         <div className="space-y-2">
