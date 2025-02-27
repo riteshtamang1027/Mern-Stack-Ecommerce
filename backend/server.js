@@ -1,6 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-import { data } from "react-router";
+// const multer  = require('multer')
+import multer from 'multer';
+const upload = multer({ dest: 'uploads/' })
+import { Category } from "./schema/categorySchema.js";
+import { products } from "./schema/productSchema.js";
 
 // App config
 const app = express();
@@ -79,6 +83,11 @@ app.patch("/products/:id", async (req, res) => {
       req.body,
       { new: true }
     );
+    if (!updateproduct) {
+      return res.status(404).json({
+        message: "product is not found.",
+      });
+    }
     return res.status(200).json({
       message: "data update successfully.",
       data: updateproduct,
@@ -111,8 +120,13 @@ app.delete("/products/:id", async (req, res) => {
   }
 });
 
-app.post("/Categories", async (req, res) => {
+app.post("/Categories",upload.single('imgUrl'), async (req, res) => {
   try {
+// Handle the image upload before saving to database 
+console.log(req.file)
+
+
+
     const categoryExist = await Category.findOne({ name: req.body.name });
     if (categoryExist) {
       return res.status(409).json({
@@ -133,104 +147,75 @@ app.post("/Categories", async (req, res) => {
   }
 });
 
-
-
 app.get("/Categories", async (req, res) => {
   try {
     const allCategory = await Category.find();
     return res.status(200).json({
-      message:"All categories fetch success.",
-      data:allCategory
-    })
-    
+      message: "All categories fetch success.",
+      data: allCategory,
+    });
   } catch (error) {
     return res.status(500).json({
       message: "internal server error",
       error,
     });
-    
   }
 });
 
 app.get("/Categories/:id", async (req, res) => {
   try {
     const SingleCategory = await Category.findById(req.params.id);
-    if(!SingleCategory){
+    if (!SingleCategory) {
       return res.status(404).json({
-        message:"Single category is not found"
-      })
+        message: "Single category is not found",
+      });
     }
     return res.status(200).json({
-message:"Single category fetch successfully",
-date:SingleCategory
+      message: "Single category fetch successfully",
+      date: SingleCategory,
     });
   } catch (error) {
     return res.status(500).json({
       message: "internal server error",
     });
-    
   }
 });
 app.patch("/Categories/:id", async (req, res) => {
   try {
-    const updatedCategory = await Category.findByIdAndUpdate(req.params.id,req.body,{new:true});
+    const updatedCategory = await Category.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
     return res.status(200).json({
-message:"Category update successfully",
-data:updatedCategory
+      message: "Category update successfully",
+      data: updatedCategory,
     });
-    
   } catch (error) {
     return res.status(500).json({
       message: "internal server error",
     });
-    
-    
   }
 });
 app.delete("/Categories/:id", async (req, res) => {
-
   try {
-
-    const deleteCategory= await Category.findByIdAndDelete(req.params.id);
-if(!deleteCategory){
-  return res.status(404).json({
-    message :"Category not found",
-  })
-}
+    const deleteCategory = await Category.findByIdAndDelete(req.params.id);
+    if (!deleteCategory) {
+      return res.status(404).json({
+        message: "Category not found",
+      });
+    }
 
     return res.status(200).json({
-      message:"Category delete successfully",
-      data:deleteCategory
-    })
-    
+      message: "Category delete successfully",
+      data: deleteCategory,
+    });
   } catch (error) {
     return res.status(500).json({
       message: "internal server error",
     });
-
-    
   }
 });
-
-// Table Schema
-
-const ProductSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-  discription: { type: String, required: false },
-  price: { type: Number, required: true },
-  previousprice: { type: Number, required: true },
-  category: { type: String, required: true },
-  imgUrl: { type: String, required: true },
-});
-
-const products = mongoose.model("Product", ProductSchema);
-
-const CategorySchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-
-  imgUrl: { type: String, required: true },
-});
-const Category = mongoose.model("Category", CategorySchema);
 
 app.get("/", (req, res) => {
   res.send("Server is runnig now");
