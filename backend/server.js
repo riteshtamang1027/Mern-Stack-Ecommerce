@@ -1,10 +1,18 @@
 import express from "express";
 import mongoose from "mongoose";
 // const multer  = require('multer')
-import multer from 'multer';
-const upload = multer({ dest: 'uploads/' })
+import multer from "multer";
+const upload = multer({ dest: "uploads/" });
 import { Category } from "./schema/categorySchema.js";
 import { products } from "./schema/productSchema.js";
+import { v2 as cloudinary } from "cloudinary";
+import 'dotenv/config'
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 // App config
 const app = express();
@@ -120,21 +128,22 @@ app.delete("/products/:id", async (req, res) => {
   }
 });
 
-app.post("/Categories",upload.single('imgUrl'), async (req, res) => {
+app.post("/Categories", upload.single("imgUrl"), async (req, res) => {
   try {
-// Handle the image upload before saving to database 
-console.log(req.file)
-
-
-
     const categoryExist = await Category.findOne({ name: req.body.name });
     if (categoryExist) {
       return res.status(409).json({
         message: "Name already taken, please choose another name",
       });
     }
+    // Handle the image upload before saving to database
 
-    const newCategory = await new Category(req.body).save();
+    const cloudinaryResponse = await cloudinary.uploader.upload(req.file.path);
+
+    const newCategory = await new Category({
+      ...req.body,
+      imgUrl: cloudinaryResponse.secure_url,
+    }).save();
     return res.status(201).json({
       message: "Category create successfully",
       data: newCategory,
