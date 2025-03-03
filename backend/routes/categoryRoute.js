@@ -1,8 +1,9 @@
 import express from "express";
 const router = express.Router();
 import multer from "multer";
-import { createCategory, deleteCategoryById, getAllcategories, getSinglecategoryById, updatedCategoryById } from "../controller/categoryController.js";
 const upload = multer({ dest: "uploads/" });
+import { createCategory, deleteCategoryById, getAllcategories, getSinglecategoryById, updatedCategoryById } from "../controller/categoryController.js";
+
 
 router.post("/",upload.single("imgUrl"),createCategory);
 router.get("/", getAllcategories);

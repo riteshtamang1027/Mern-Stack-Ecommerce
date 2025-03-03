@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import categoryRoute from "./routes/categoryRoute.js";
 import productRout from "./routes/productRout.js";
+import userRoute from './routes/userRoute.js'
 
 // App config
 const app = express();
@@ -18,6 +19,7 @@ try {
 }
 app.use("/Categories", categoryRoute);
 app.use("/Products", productRout);
+app.use("/Users",userRoute)
 
 app.get("/", (req, res) => {
   res.send("Ecommerce backend server is running");

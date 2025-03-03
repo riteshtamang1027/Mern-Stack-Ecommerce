@@ -1,3 +1,4 @@
+import cloudinary from "../lib/cloudinaryConfig.js";
 import { products } from "../schema/productSchema.js";
 
 // Product CRUDE
@@ -11,8 +12,14 @@ export const createProduct = async (req, res) => {
         message: "Name already exist, please choose another name",
       });
     }
+    // upload the image in cloudinary and get the url
+    const cloudinaryResponse = await cloudinary.uploader.upload(req.file.path);
+    // console.log(cloudinaryResponse);
 
-    const newproduct = await new products(req.body).save();
+    const newproduct = await new products({
+      ...req.body,
+      imgUrl: cloudinaryResponse.secure_url,
+    }).save();
     return res.status(201).json({
       message: "product created successfully",
       data: newproduct,
@@ -57,6 +64,28 @@ export const getSingleProductById = async (req, res) => {
 // update a product
 export const updateproductById = async (req, res) => {
   try {
+   
+    let cloudinaryResponse;
+    if (req.file) {
+      const cloudinaryResponse = await cloudinary.uploader.upload(
+        req.file.path
+      );
+      const updateproduct = await products.findByIdAndUpdate(
+        req.params.id,
+        { ...req.body, imgUrl: cloudinaryResponse.secure_url },
+        { new: true }
+      );
+
+      if (!updateproduct) {
+        return res.status(404).json({
+          message: "product is not found.",
+        });
+      }
+      return res.status(200).json({
+        message: "data update successfully.",
+        data: updateproduct,
+      });
+    }
     const updateproduct = await products.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -68,7 +97,7 @@ export const updateproductById = async (req, res) => {
       });
     }
     return res.status(200).json({
-      message: "data update successfully.",
+      message: "product updated successfully.",
       data: updateproduct,
     });
   } catch (error) {
