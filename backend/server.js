@@ -5,6 +5,7 @@ import categoryRoute from "./routes/categoryRoute.js";
 import productRout from "./routes/productRout.js";
 import userRoute from './routes/userRoute.js'
 
+
 // App config
 const app = express();
 // Middlewire

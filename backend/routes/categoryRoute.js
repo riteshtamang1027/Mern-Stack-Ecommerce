@@ -8,7 +8,7 @@ import { createCategory, deleteCategoryById, getAllcategories, getSinglecategory
 router.post("/",upload.single("imgUrl"),createCategory);
 router.get("/", getAllcategories);
 router.get("/:id", getSinglecategoryById);
-router.patch("/:id",updatedCategoryById);
+router.patch("/:id",upload.single("imgUrl"),updatedCategoryById);
 router.delete("/:id",deleteCategoryById);
 
 export default router;

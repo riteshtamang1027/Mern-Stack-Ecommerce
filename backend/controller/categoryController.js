@@ -1,7 +1,6 @@
 import cloudinary from "../lib/cloudinaryConfig.js";
 import { Category } from "../schema/categorySchema.js";
 
-
 export const createCategory = async (req, res) => {
   try {
     const categoryExist = await Category.findOne({ name: req.body.name });
@@ -66,11 +65,33 @@ export const getSinglecategoryById = async (req, res) => {
 
 export const updatedCategoryById = async (req, res) => {
   try {
+    let cloudinaryResponse;
+    if (req.file) {
+      const cloudinaryResponse = await cloudinary.uploader.upload(
+        req.file.path
+      );
+      const updatedCategory = await Category.findByIdAndUpdate(
+        req.params.id,
+        { ...req.body, imgUrl: cloudinaryResponse.secure_url },
+        { new: true }
+      )
+      return res.status(200).json({
+        message:"Category file updated successfully.",
+        data:updatedCategory
+      })
+    }
+    
     const updatedCategory = await Category.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
     );
+    if (!updatedCategory) {
+      return res.status(404).json({
+        message: "Category is not found.",
+      });
+    }
+   
     return res.status(200).json({
       message: "Category update successfully",
       data: updatedCategory,
