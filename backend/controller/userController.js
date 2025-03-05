@@ -62,7 +62,7 @@ export const loginUser = async (req, res) => {
     }
 
     // if password matched then generate th jwt token
-    const myToken = jwt.sign({ email: UserExist.email }, "this is privet key", {
+    const myToken = jwt.sign({ email: UserExist.email }, "this_is_privet_key", {
       expiresIn: "1h",
     });
     console.log(myToken);

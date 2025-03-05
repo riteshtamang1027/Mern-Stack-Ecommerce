@@ -2,6 +2,7 @@ import cloudinary from "../lib/cloudinaryConfig.js";
 import { Category } from "../schema/categorySchema.js";
 
 export const createCategory = async (req, res) => {
+  console.log(req.file)
   try {
     const categoryExist = await Category.findOne({ name: req.body.name });
     if (categoryExist) {
@@ -19,7 +20,7 @@ export const createCategory = async (req, res) => {
     }).save();
     return res.status(201).json({
       message: "Category create successfully",
-      data: newCategory,
+      data: newCategory, 
     });
   } catch (error) {
     return res.status(500).json({

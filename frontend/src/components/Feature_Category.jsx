@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,9 +19,21 @@ import first_image11 from "../../public/images/category-pet-care.jpg";
 
 
 export default function Feature_Category() {
+// useState hook 
+// const [variable,setterFunction]= useState(initialValue)
+const [name,setName]= useState("Ritesh Tamang");
+const handlechangeName= ()=>{
+  setName("Ritesh Tamang change")
+}
+console.log(name)
+
+
+
   return (
     <>
     <div className="w-10/12 mx-auto space-y-8 mt-24">
+    {name}
+    <button className='bg-gray-300 p-2'onClick={handlechangeName}>changename</button>
       <div className="flex items-center justify-between  mt-12 text-2xl font-semibold h-70vh opacity-70 ">
         <p>Featured Categories</p>
       </div>
