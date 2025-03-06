@@ -25,7 +25,4 @@ export const verifyToken = async (req, res, next) => {
     // 3. if token is valid then proceed forward else block the request
     next(); // bar
   });
-
-  
-  
 };

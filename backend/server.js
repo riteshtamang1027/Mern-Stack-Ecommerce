@@ -3,13 +3,15 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import categoryRoute from "./routes/categoryRoute.js";
 import productRout from "./routes/productRout.js";
-import userRoute from './routes/userRoute.js'
+import userRoute from './routes/userRoute.js';
+import cors from 'cors'
 
 
 // App config
 const app = express();
 // Middlewire
 app.use(express.json());
+app.use(cors())
 
 // Database config
 try {

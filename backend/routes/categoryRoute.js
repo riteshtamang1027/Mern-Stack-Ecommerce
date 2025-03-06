@@ -7,7 +7,7 @@ import { verifyToken } from "../middlware/verifyToken.js";
 
 
 router.post("/", verifyToken ,upload.single("imgUrl"),createCategory);
-router.get("/" , verifyToken , getAllcategories);
+router.get("/"  , getAllcategories);
 router.get("/:id", getSinglecategoryById);
 router.patch("/:id", verifyToken ,upload.single("imgUrl"),updatedCategoryById);
 router.delete("/:id", verifyToken ,deleteCategoryById);
