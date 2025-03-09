@@ -4,14 +4,16 @@ import "dotenv/config";
 import categoryRoute from "./routes/categoryRoute.js";
 import productRout from "./routes/productRout.js";
 import userRoute from './routes/userRoute.js';
-import cors from 'cors'
+import cors from 'cors';
 
 
 // App config
 const app = express();
 // Middlewire
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+  origin :"http://localhost:5173"})
+)
 
 // Database config
 try {

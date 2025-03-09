@@ -29,7 +29,7 @@ export const RegisterUser = async (req, res) => {
       data: newRegisterUser,
     });
   } catch (error) {
-    // console.log(error)
+   
     return res.status(500).json({
       message: "Error while  registering user.",
       error: error,
@@ -48,7 +48,6 @@ export const loginUser = async (req, res) => {
           "User not exists with this email please register it and login.",
       });
     }
-
     //  if user exist  compare the password
     const isPasswordMatched = await bcrypt.compare(
       req.body.password,
@@ -72,10 +71,10 @@ export const loginUser = async (req, res) => {
       user: UserExist,
     });
   } catch (error) {
-    console.log(error);
+   
     return res.status(500).json({
       message: "Error while  login user.",
-      error: error,
+      
     });
   }
 };
@@ -98,10 +97,10 @@ export const getAllUsers = async (req, res) => {
 // get single user
 export const getSingleUserById = async (req, res) => {
   try {
-    const AllUsers = await User.findById();
+    const singleUser = await User.findById();
     return res.status(200).json({
       message: "All user fetch successfully.",
-      data: AllUsers,
+      data: singleUser,
     });
   } catch (error) {
     return res.status(500).json({
@@ -113,6 +112,18 @@ export const getSingleUserById = async (req, res) => {
 // update user
 export const updatedUserById = async (req, res) => {
   try {
+    // if password is given for update 
+    if(req.body.password){
+      const newHashPassword =await bcrypt.hash(req.body.password, saltRounds);
+      const updateUser = await User.findByIdAndUpdate(req.body.email, {...req.body,password:newHashPassword}, {
+        new: true,
+      });
+      return res.status(200).json({
+        message: "User password update successfully.",
+        data: updateUser,
+      });
+    }
+
     const updateUser = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
@@ -129,6 +140,9 @@ export const updatedUserById = async (req, res) => {
 // delete user
 export const deleteUserById = async (req, res) => {
   try {
+    
+
+
     const deleteUser = await User.findByIdAndDelete(req.params.id);
     return res.status(200).json({
       message: "User data delete successfully.",

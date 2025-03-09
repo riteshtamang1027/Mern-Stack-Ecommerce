@@ -16,6 +16,7 @@ export const verifyToken = async (req, res, next) => {
 
   // 2. check if token is valid or not
   jwt.verify(pureToken, "this_is_privet_key", function (err, decoded) {
+    console.log(decoded.foo) 
     if (err) {
       return res.status(401).json({
         message: "Token found but token invalide",
