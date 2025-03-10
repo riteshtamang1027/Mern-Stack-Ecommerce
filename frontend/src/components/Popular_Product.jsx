@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 
-import first from "../../public/popularproducts/product1.jpg";
-import second from "../../public/popularproducts/product2.jpg";
-import third from "../../public/popularproducts/product3.jpg";
-import forth from "../../public/popularproducts/product4.jpg";
-import fifth from "../../public/popularproducts/product5.jpg";
-import sixth from "../../public/popularproducts/product6.jpg";
-import seventh from "../../public/popularproducts/product7.jpg";
-import eighth from "../../public/popularproducts/product8.jpg";
-import nineth from "../../public/popularproducts/product9.jpg";
-import tenth from "../../public/popularproducts/product10.jpg";
-import eleven from "../../public/popularproducts/product11.jpg";
-import twelve from "../../public/popularproducts/product12.jpg";
-import thirteen from "../../public/popularproducts/product13.jpg";
+// import first from "../../public/popularproducts/product1.jpg";
+// import second from "../../public/popularproducts/product2.jpg";
+// import third from "../../public/popularproducts/product3.jpg";
+// import forth from "../../public/popularproducts/product4.jpg";
+// import fifth from "../../public/popularproducts/product5.jpg";
+// import sixth from "../../public/popularproducts/product6.jpg";
+// import seventh from "../../public/popularproducts/product7.jpg";
+// import eighth from "../../public/popularproducts/product8.jpg";
+// import nineth from "../../public/popularproducts/product9.jpg";
+// import tenth from "../../public/popularproducts/product10.jpg";
+// import eleven from "../../public/popularproducts/product11.jpg";
+// import twelve from "../../public/popularproducts/product12.jpg";
+// import thirteen from "../../public/popularproducts/product13.jpg";
+
 import Single_Product_Card from "./Single_Product_Card";
 
 export default function Popular_Product() {
