@@ -23,7 +23,7 @@ try {
   console.log("Something went wrong ", error);
 }
 app.use("/Categories", categoryRoute);
-app.use("/Products", productRout);
+app.use("/Products", productRout); 
 app.use("/Users",userRoute)
 
 app.get("/", (req, res) => {

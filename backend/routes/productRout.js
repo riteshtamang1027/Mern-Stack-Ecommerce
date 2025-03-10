@@ -6,7 +6,7 @@ import { verifyToken } from "../middlware/verifyToken.js";
 const upload = multer({ dest: "uploads/" });
 
 
-router.post("/",verifyToken,upload.single("imgUrl"),createProduct);
+router.post("/",upload.single("imgUrl"),createProduct);
 router.get("/", getAllProduct);
 router.get("/:id", getSingleProductById);
 router.patch("/:id",verifyToken,upload.single("imgUrl"),updateproductById);
