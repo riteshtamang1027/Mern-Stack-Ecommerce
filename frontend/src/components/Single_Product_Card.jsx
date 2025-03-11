@@ -23,8 +23,8 @@ export default function Single_Product_Card({ item }) {
           </div>
           <div className=" flex items-center justify-between w-full whitespace-nowrap">
             <p className=" font-semibold max-sm:text-xs">
-              {item.price}{" "}
-              <span className=" opacity-70"> {item.previousprice}</span>
+              ${item.price}{" "}
+              <span className=" opacity-70 line-through"> ${item.previousprice}</span>
             </p>
             <button className=" bg-green-500 text-white font-semibold rounded-md px-4 py-1 text-xs">
               Add

@@ -10,6 +10,6 @@ router.post("/",upload.single("imgUrl"),createProduct);
 router.get("/", getAllProduct);
 router.get("/:id", getSingleProductById);
 router.patch("/:id",verifyToken,upload.single("imgUrl"),updateproductById);
-router.delete("/:id",verifyToken,deleteProductById);
+router.delete("/:id",deleteProductById);
 
 export default router;
