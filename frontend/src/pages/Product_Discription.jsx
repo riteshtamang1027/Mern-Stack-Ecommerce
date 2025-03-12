@@ -30,7 +30,6 @@ export default function Product_Discription() {
   const fetchSingleProduct = async () => {
     try {
       setIsFetching(true);
-
       const response = await axios.get(
         `http://localhost:4000/Products/${product_id}`
       );
@@ -44,20 +43,17 @@ export default function Product_Discription() {
   const [singleProduct, setSingleProduct] = useState();
   // console.log(singleProduct);
 
-  // fetching all products 
+  // fetching all products
   const [allProducts, setallProducts] = useState();
 
-  const fetchingAllProducts = async ()=>{
+  const fetchingAllProducts = async () => {
     try {
       const response = await axios.get("http://localhost:4000/Products");
       setallProducts(response.data.data);
-      
     } catch (error) {
-
-      console.log("Something went wrong to fetch products.",error)
-      
+      console.log("Something went wrong to fetch products.", error);
     }
-  }
+  };
   useEffect(() => {
     fetchSingleProduct();
     fetchingAllProducts();
@@ -67,7 +63,7 @@ export default function Product_Discription() {
   return (
     <div>
       {isFetching ? (
-        <p>loaing...</p>
+        <p className="text-2xl opacity-80 text-center">loaing...</p>
       ) : (
         <div>
           {singleProduct && (
@@ -88,7 +84,7 @@ export default function Product_Discription() {
                 </p>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-24 mt-16">
-                <div className=" " >
+                <div className=" ">
                   <Swiper
                     loop={true}
                     spaceBetween={10}
