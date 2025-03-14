@@ -31,7 +31,7 @@ export default function Popular_Product() {
     }
   }
    const [allProducts,setAllProducts]=useState();
-   console.log(allProducts)
+  
   useEffect(()=>{
     fetchAllProducts();
 

@@ -36,7 +36,7 @@ export const createProduct = async (req, res) => {
 export const getAllProduct = async (req, res) => {
   try {
     const allProducts = await products.find();
-    return res.status(200).json({
+    return res.status(200).json({ 
       message: "All product fetched successfully",
       data: allProducts,
     });

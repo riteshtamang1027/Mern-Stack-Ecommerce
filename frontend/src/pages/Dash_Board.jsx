@@ -6,19 +6,20 @@ import CategoryCreate from "../components/categoryCreate";
 export default function Dash_Board() {
   const [isdeleting, setisdeleting] = useState(false);
 
-  const handeldelete = async (_id)=>{
+  const handeldelete = async (_id) => {
     try {
-      setisdeleting(true)
-      const response = await axios.delete(`http://localhost:4000/Products/${_id}`)
-    setisdeleting(false)
-    fetchAllProduct()
-      
+      setisdeleting(true);
+      const response = await axios.delete(
+        `http://localhost:4000/Products/${_id}`
+      );
+      setisdeleting(false);
+      fetchAllProduct();
     } catch (error) {
-      console.log('sometghjk')
-      setisdeleting(false)
-      
+      console.log("Something went wrong.");
+      setisdeleting(false);
     }
-  }
+  };
+
   // --usf
   const [name, setname] = useState("");
   const [description, setDescription] = useState("");
@@ -28,6 +29,7 @@ export default function Dash_Board() {
   const [image, setImage] = useState(null);
   const [IsSubmitting, setIsSubmitting] = useState(false);
   // console.log(name,description,price,previousPrice,category,image);
+
   const createProduct = async (e) => {
     e.preventDefault();
     try {
@@ -43,13 +45,13 @@ export default function Dash_Board() {
         "http://localhost:4000/Products",
         formData
       );
-      console.log(response);
+      // console.log(response);
       setIsSubmitting(false);
       setname("");
       setCategory("");
       setDescription("");
       setPreviousPrice();
-      setPrice("");
+      setPrice();
       setImage("");
     } catch (error) {
       console.log("something went wrong.", error);
@@ -58,20 +60,23 @@ export default function Dash_Board() {
   };
   // fetch all product
   const [allProducts, setAllProducts] = useState();
+
   const fetchAllProduct = async () => {
     try {
       const response = await axios.get("http://localhost:4000/Products");
       setAllProducts(response.data.data);
     } catch (error) {
-      console.log("something went run", error);
+      console.log("something went wrong", error);
     }
   };
-  console.log(allProducts, "this is all products.");
+
   useEffect(() => {
     fetchAllProduct();
   });
   return (
-    <div className="w-10/12 mx-auto mt-12">
+    <div className="w-10/12 mx-auto mt-12 space-y-4">
+      <p className="text-3xl font-bold opacity-80">Create Product</p>
+
       <form
         onSubmit={createProduct}
         className="border p-6 border-gray-300 rounded-sm shadow-2xl flex flex-col space-y-8"
@@ -129,16 +134,31 @@ export default function Dash_Board() {
           Create Product
         </button>
       </form>
-      <div className="space-y-4">
-   
+
+      <p className="text-3xl font-bold opacity-80">Delete Product</p>
+
+
+      <div className="space-y-4 mt-12   ">
         {allProducts?.map((item) => (
-          <p key={item._id}> {item.name}
-          <button onClick={(e)=>{handeldelete(item._id)}} className="text-white bg-red-400 flex ">{isdeleting? "Deleting... ":"delete"} </button> 
-           </p>
-          
+          <div className="space-x-8  " key={item._id}>
+            {" "}
+            <span className="font-semibold opacity-70">{item.name} </span>
+            <button
+              onClick={() => {
+                handeldelete(item._id);
+              }}
+              className="text-white bg-red-400 px-2 py-1 rounded-sm cursor-pointer"
+            >
+              {isdeleting ? "Deleting... " : "delete"}{" "}
+            </button>
+          </div>
         ))}
       </div>
-      <CategoryCreate/>
+
+
+      <CategoryCreate />
+
+
     </div>
   );
 }
