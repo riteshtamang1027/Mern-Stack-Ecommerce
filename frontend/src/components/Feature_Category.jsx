@@ -5,34 +5,12 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import axios from "axios";
 
-import first_image from "../../public/images/category-baby-care.jpg";
-import first_image1 from "../../public/images/category-atta-rice-dal.jpg";
-import first_image2 from "../../public/images/category-bakery-biscuits.jpg";
-import first_image3 from "../../public/images/category-chicken-meat-fish.jpg";
-import first_image4 from "../../public/images/category-cleaning-essentials.jpg";
-import first_image5 from "../../public/images/category-dairy-bread-eggs.jpg";
-import first_image6 from "../../public/images/category-instant-food.jpg";
-import first_image7 from "../../public/images/category-tea-coffee-drinks.jpg";
-import first_image8 from "../../public/images/category-cold-drinks-juices.jpg";
-import first_image9 from "../../public/images/category-fruits-vegetables.jpg";
-import first_image10 from "../../public/images/category-snack-munchies.jpg";
-import first_image11 from "../../public/images/category-pet-care.jpg";
-
 export default function Feature_Category() {
   // useState hook
   // const [variable,setterFunction]= useState(initialValue)
-  // const [name,setName]= useState("Ritesh Tamang");
-  // const handlechangeName= ()=>{
-  //   setName("Ritesh Tamang change")
-  // }
-  // console.log(name)
-  // useEffect Hook
-  // useEffect runs only when the page reloads and when its dependency gets changed
-  // const a= 7
-  // useEffect(() => {
-  //  console.log("Hello world")
 
-  // }, [a])
+  // useEffect Hook
+
   // fetch all categories  function
   const [isloading, setIsloding] = useState(false);
   const [allCategories, setAllCategories] = useState(undefined);
@@ -104,54 +82,3 @@ export default function Feature_Category() {
     </>
   );
 }
-
-// const Categories = [
-//     {
-//       Image: first_image,
-//       Name: "Baby Care",
-//     },
-//     {
-//       Image: first_image1,
-//       Name: "Atta, Rice and Dal ",
-//     },
-//     {
-//       Image: first_image2,
-//       Name: "Bakery & Biscuits",
-//     },
-//     {
-//       Image: first_image3,
-//       Name: "Chicken, Meat & Fish",
-//     },
-//     {
-//       Image: first_image4,
-//       Name: "Cleaning & Essentials",
-//     },
-//     {
-//       Image: first_image5,
-//       Name: "Dairy, Bread & Eggs",
-//     },
-//     {
-//       Image: first_image6,
-//       Name: "Instant & Food",
-//     },
-//     {
-//       Image: first_image7,
-//       Name: "Tea Coffee & Drinks",
-//     },
-//     {
-//       Image: first_image8,
-//       Name: "Cold Drinks & Juices",
-//     },
-//     {
-//       Image: first_image9,
-//       Name: "Fruits & Vegetables",
-//     },
-//     {
-//       Image: first_image10,
-//       Name: "Snack & Munchies",
-//     },
-//     {
-//       Image: first_image11,
-//       Name: "Pet Care",
-//     },
-//   ];

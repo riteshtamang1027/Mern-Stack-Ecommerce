@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { Loader } from "lucide-react";
+import { Loader } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export default function categoryCreate() {
@@ -29,7 +29,7 @@ export default function categoryCreate() {
     }
   };
 
-  const [IsCreating, setIsCreating] = useState("false");
+  const [IsCreating, setIsCreating] = useState(false);
   const [Name, setName] = useState("");
   const [imgurl, setImgurl] = useState("");
   const createCategory = async (e) => {
@@ -42,8 +42,12 @@ export default function categoryCreate() {
       const response = await axios.post(
         "http://localhost:4000/Categories",
         formData
+        
       );
       setIsCreating(false);
+      setName(" ");
+      setImgurl("");
+      fetchAllcategories();
     } catch (error) {
       console.log("Something went wrong to create category.", error);
       setIsCreating(false);
@@ -62,7 +66,7 @@ export default function categoryCreate() {
         onSubmit={createCategory}
         className="border border-gray-300 px-6 py-4 rounded-sm space-y-4"
       >
-        <input
+        <input required      
           value={Name}
           onChange={(e) => setName(e.target.value)}
           className="px-4 py-2 outline-none border border-gray-300 rounded-sm w-full"
@@ -70,7 +74,7 @@ export default function categoryCreate() {
           placeholder="Enter product name"
         />
 
-        <input
+        <input required            
           onChange={(e) => {
             if (e.target.files && e.target.files.length > 0)
               setImgurl(e.target.files[0]);
@@ -83,7 +87,7 @@ export default function categoryCreate() {
           className="px-4 py-2 outline-none border border-gray-300 rounded-sm w-full bg-green-600 text-white cursor-pointer hover:bg-green-400 duration-500 flex justify-center items-center gap-2 "
         >
           {IsCreating ? "Category Creating..." : "Create Category "}
-          {/* {IsCreating && <Loader size={20} className=" animate-spin" />} */}
+          {IsCreating && <Loader size={20} className=" animate-spin" />}
         </button>
       </form>
 

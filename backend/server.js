@@ -20,7 +20,7 @@ try {
   mongoose.connect(process.env.MONGO_URI);
   console.log("Mongodb connected successfully");
 } catch (error) {
-  console.log("Something went wrong ", error);
+  console.log("Something went wrong ", error); 
 }
 app.use("/Categories", categoryRoute);
 app.use("/Products", productRout); 
