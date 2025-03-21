@@ -113,20 +113,14 @@ export const getSingleUserById = async (req, res) => {
 export const updatedUserById = async (req, res) => {
   try {
     // if password is given for update 
+    const user = await User.findById(req.params.id);
+    let hashedPassword = user.password;
     if(req.body.password){
       const newHashPassword =await bcrypt.hash(req.body.password, saltRounds);
-      const updateUser = await User.findByIdAndUpdate(req.body.email, {...req.body,password:newHashPassword}, {
-        new: true,
-      });
-      return res.status(200).json({
-        message: "User password update successfully.",
-        data: updateUser,
-      });
+      hashedPassword= newHashPassword;
     }
 
-    const updateUser = await User.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
+    const updateUser = await User.findByIdAndUpdate(req.params.id, {...req.body,password:hashedPassword,new:true} );
     return res.status(200).json({
       message: "User data updated Successfully.",
       data: updateUser,
