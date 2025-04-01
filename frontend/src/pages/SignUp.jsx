@@ -1,7 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { NavLink } from "react-router";
 
 export default function SignUp({hide}) {
+  const [FullName, setFullName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+
+  const handleUsers = async(e)=>{
+    e.preventDefault()
+
+    try {
+      const response = await axios.post("http://localhost:4000/Users/register", FullName,Email,Password);
+      setFullName("");
+      setEmail("");
+      setPassword("");
+      
+    } catch (error) {
+      console.log("Something went wrong to handle users.",error)
+      
+    }
+  }
+  console.log(FullName,Email,Password)
   return (
     <>
        <div onClick={hide} className="fixed top-0 ">  </div>
@@ -14,28 +34,32 @@ export default function SignUp({hide}) {
             X
           </p>
         </div>
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <p>Name</p>
-            <input
+        <form onSubmit={handleUsers} className="space-y-4">
+          <div className="flex flex-col space-y-2">
+            <label >Name</label>
+            <input value={FullName} 
+            onChange={(e)=>setFullName(e.target.value)}
               type="text"
               className="border  border-gray-300 outline-none rounded-md px-4 py-2 font-semibold  focus:border-[#3eac21] focus:ring-4 focus:ring-[#afdfa1] w-[82vw] sm:w-[56vw] md:w-[34vw] lg:w-[27vw] xl:w-[25vw] opacity-60 "
               placeholder="Enter Your Name"
             />
           </div>
 
-          <div>
-            <p>Email address</p>
-            <input
+          <div className="flex flex-col space-y-2">
+            <label>Email address</label>
+            <input value={Email}
+            onChange={(e)=>setEmail(e.target.value)}
               type="text"
               className="border  border-gray-300 outline-none rounded-md px-4 py-2 font-semibold  focus:border-[#3eac21] focus:ring-4 focus:ring-[#afdfa1] w-[82vw] sm:w-[56vw] md:w-[34vw] lg:w-[27vw] xl:w-[25vw] opacity-60 "
               placeholder="Enter Your Email"
             />
           </div>
 
-          <div>
-            <p>Password</p>
+          <div className="flex flex-col space-y-2">
+            <label>Password</label>
             <input
+             value={Password}
+             onChange={(e)=>setPassword(e.target.value)}
               type="text"
               className="border  border-gray-300 outline-none rounded-md px-4 py-2 font-semibold  focus:border-[#3eac21] focus:ring-4 focus:ring-[#afdfa1] w-[82vw] sm:w-[56vw] md:w-[34vw] lg:w-[27vw] xl:w-[25vw] opacity-60 "
               placeholder="Enter Your Password"
@@ -51,7 +75,7 @@ export default function SignUp({hide}) {
               Privacy Policy
             </span>{" "}
           </p>
-          <button className=" py-2 px-4 rounded-md bg-[#3eac21] text-white font-semibold whitespace-nowrap cursor-pointer ">
+          <button type="submit" className=" py-2 px-4 rounded-md bg-[#3eac21] text-white font-semibold whitespace-nowrap cursor-pointer ">
             Sign Up
           </button>
           <p className="text-sm font-semibold opacity-70 text-center ">
@@ -61,7 +85,7 @@ export default function SignUp({hide}) {
               Sign In
             </NavLink>{" "}
           </p>
-        </div>
+        </form>
       </div>
     </>
      

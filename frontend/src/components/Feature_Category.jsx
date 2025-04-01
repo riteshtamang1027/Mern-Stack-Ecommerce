@@ -17,12 +17,12 @@ export default function Feature_Category() {
   const fetchAllCategories = async () => {
     try {
       setIsloding(true);
-      const response = await axios.get("http://localhost:4000/Categories");
+      const response = await axios.get("http://localhost:4000/Categories"); 
       //  console.log(response.data.data)
       setAllCategories(response.data.data);
       setIsloding(false);
     } catch (error) {
-      setIsloding(flase);
+      setIsloding(false);
       console.log("Something went wrong.", error);
     }
   };
