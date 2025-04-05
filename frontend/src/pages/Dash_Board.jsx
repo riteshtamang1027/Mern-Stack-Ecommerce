@@ -10,7 +10,7 @@ export default function Dash_Board() {
     try {
       setisdeleting(true);
       const response = await axios.delete(
-        `http://localhost:4000/Products/${_id}`
+        `${import.meta.env.VITE_SERVER_URL}/Products/${_id}`
       );
       setisdeleting(false);
       fetchAllProduct();
@@ -42,7 +42,7 @@ export default function Dash_Board() {
       formData.append("category", category);
       formData.append("imgUrl", image);
       const response = await axios.post(
-        "http://localhost:4000/Products",
+        `${import.meta.env.VITE_SERVER_URL}/Products`,
         formData
       );
       // console.log(response);
@@ -63,7 +63,7 @@ export default function Dash_Board() {
 
   const fetchAllProduct = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/Products");
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/Products`);
       setAllProducts(response.data.data);
     } catch (error) {
       console.log("something went wrong", error);

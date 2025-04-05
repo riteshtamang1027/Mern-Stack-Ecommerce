@@ -31,7 +31,7 @@ export default function Product_Discription() {
     try {
       setIsFetching(true);
       const response = await axios.get(
-        `http://localhost:4000/Products/${product_id}`
+        `${import.meta.env.VITE_SERVER_URL}/Products/${product_id}`
       );
       setSingleProduct(response.data.data);
       setIsFetching(false);

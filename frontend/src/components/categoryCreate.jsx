@@ -5,12 +5,12 @@ import React, { useEffect, useState } from "react";
 export default function categoryCreate() {
   //  to handel delete situation
   const [isDelete, setisDelete] = useState(false);
-  const handelDelete = async (_id) => {
+  const handleDelete = async (_id) => {
     try {
       setisDelete(true);
 
       const response = await axios.delete(
-        `http://localhost:4000/Categories/${_id}`
+        `${import.meta.env.VITE_SERVER_URL}/Categories/${_id}`
       );
       setisDelete(false);
       fetchAllcategories();
@@ -22,7 +22,7 @@ export default function categoryCreate() {
   const [allCategories, setAllCategories] = useState();
   const fetchAllcategories = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/Categories");
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/Categories`);
       setAllCategories(response.data.data);
     } catch (error) {
       console.log("Something went wrong to fetch all categories.", error);
@@ -40,7 +40,7 @@ export default function categoryCreate() {
       formData.append("name", Name);
       formData.append("imgUrl", imgurl);
       const response = await axios.post(
-        "http://localhost:4000/Categories",
+       ` ${import.meta.env.VITE_SERVER_URL}/Categories`,
         formData
         
       );
@@ -102,7 +102,7 @@ export default function categoryCreate() {
               {eachItem.name}{" "}
               <button
                 onClick={() => {
-                  handelDelete(eachItem._id);
+                  handleDelete(eachItem._id);
                 }}
                 className="text-white bg-red-600 px-4 py-2 rounded-sm border border-gray-300"
               >

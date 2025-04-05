@@ -13,7 +13,7 @@ export default function Sign_In() {
   const handleUser =  async(e)=>{
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:4000/Users/login",Email,Password
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/Users/login`,Email,Password
       );
       console.log(response);
       

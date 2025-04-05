@@ -22,7 +22,7 @@ export default function Popular_Product() {
   // },[a])
   const fetchAllProducts = async()=>{
     try {
-      const response = await axios.get("http://localhost:4000/Products") ;
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/Products`) ;
       setAllProducts(response.data.data);
       
     } catch (error) {
