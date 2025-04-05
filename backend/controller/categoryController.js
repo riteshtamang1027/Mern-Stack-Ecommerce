@@ -27,7 +27,7 @@ export const createCategory = async (req, res) => {
       message: "internal server error",
       error,
     });
-  }
+  } 
 };
 
 export const getAllcategories = async (req, res) => {
